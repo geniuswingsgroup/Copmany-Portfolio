@@ -17,10 +17,11 @@ const Home = () => {
   const [projects, setProjects] = useState([]); // Initialize as empty array
 
   const [loading, setLoading] = useState(true);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const fetchCourses = async () => {
     try {
-      const response = await fetch(`http://145.223.118.232:9000/api/v1/course`);
+      const response = await fetch(`${apiUrl}/course`);
       if (!response.ok) {
         throw new Error("Failed to fetch courses.");
       }
@@ -33,7 +34,7 @@ const Home = () => {
 
   const fetchTeamMembers = async () => {
     try {
-      const response = await fetch(`http://145.223.118.232:9000/api/v1/ourteam`);
+      const response = await fetch(`${apiUrl}/ourteam`);
       if (!response.ok) {
         throw new Error("Failed to fetch team members.");
       }
@@ -46,7 +47,7 @@ const Home = () => {
 
   const fetchFeatures = async () => {
     try {
-      const response = await fetch(`http://145.223.118.232:9000/api/v1/feature`);
+      const response = await fetch(`${apiUrl}/feature`);
       if (!response.ok) {
         throw new Error("Failed to fetch feature.");
       }
@@ -58,7 +59,7 @@ const Home = () => {
   };
   const fetchProjects = async () => {
     try {
-      const response = await fetch(`http://145.223.118.232:9000/api/v1/project?limit=10`);
+      const response = await fetch(`${apiUrl}/project?limit=10`);
       if (!response.ok) {
         throw new Error("Failed to fetch feature.");
       }

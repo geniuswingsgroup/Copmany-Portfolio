@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';  // Hamburger menu icon
+import MenuIcon from '@mui/icons-material/Menu'; // Hamburger menu icon
 import CloseIcon from '@mui/icons-material/Close'; // Close icon
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -20,29 +21,46 @@ export default function TemporaryDrawer() {
     setOpen(newOpen);
   };
 
+  const routes = [
+    { name: 'Manage Team', path: '/manage-team' },
+    { name: 'Courses', path: '/courses' },
+    { name: 'Manage Courses', path: '/manage-courses' },
+    { name: 'Manage Register Course', path: '/manage-register-course' },
+    { name: 'Our Projects', path: '/our-projects' },
+    { name: 'Manage Project', path: '/manage-project' },
+    { name: 'Manage Features', path: '/manage-features' },
+    { name: 'About us', path: '/about-us' },
+    { name: 'Contact us', path: '/contact-us' },
+    { name: 'Manage Contact', path: '/manage-contact' },
+
+  ];
+  
+  const Authroutes = [
+    { name: 'Register', path: '/register' },
+    { name: 'Login', path: '/login' },
+    { name: 'Manage users', path: '/users' },
+  ];
+  
+
+
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {routes.map((route, index) => (
+          <ListItem key={route.name} disablePadding>
+            <ListItemButton component={Link} to={route.path}>
+              {/* <ListItemIcon>{route.icon}</ListItemIcon> */}
+              <ListItemText primary={route.name} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+      {Authroutes.map((route, index) => (
+          <ListItem key={route.name} disablePadding>
+            <ListItemButton component={Link} to={route.path}>
+              <ListItemText primary={route.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -53,16 +71,13 @@ export default function TemporaryDrawer() {
   return (
     <div>
       {/* IconButton with MenuIcon to toggle the drawer */}
-     
-      <MenuIcon         onClick={toggleDrawer(true)} 
- /> {/* Hamburger Menu Icon */}
+      <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+        <MenuIcon />
+      </IconButton>
 
       {/* Drawer component */}
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        <Box sx={{ width: 250 }}>
-    
-                    {DrawerList}
-        </Box>
+        <Box sx={{ width: 250 }}>{DrawerList}</Box>
       </Drawer>
     </div>
   );

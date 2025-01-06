@@ -72,7 +72,7 @@ const Allprojects = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 lg:grid-cols-3 gap-6 mt-7 mb-8">
               {Projects.map((project) => {
                 return (
-                  <a
+                  <a key={project._id}
                     href={project.url ? project.url : null}
                     className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[300px] p-4 hover:border-[#b29336]"
                   >

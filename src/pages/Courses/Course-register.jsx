@@ -4,6 +4,9 @@ import { toast, Toaster } from "react-hot-toast";
 import Cookies from "js-cookie";
 import { PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/outline";
 import Loader from "../Loader";
+import { cheak_auth } from "../../Redux/Actions/contact-us-action";
+import { useDispatch, useSelector } from "react-redux";
+import Error404 from "../error404-page";
 
 const RegisterCourse = () => {
   const [loading, setLoading] = useState(true);
@@ -12,6 +15,9 @@ const RegisterCourse = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const apiUrl = process.env.REACT_APP_API_URL;
+  const isAuthuntucated = useSelector((state) => state.contact.auth_status);
+
+  const dispatch = useDispatch();
 
   // Fetch Registers based on the current page
   const fetchReisters = async () => {
@@ -31,8 +37,20 @@ const RegisterCourse = () => {
   };
 
   useEffect(() => {
-    fetchReisters();
-  }, [currentPage]);
+    const fetchData = async () => {
+      setLoading(true); // Set loading to true before starting data fetching
+      try {
+        // Wait for both data fetch and dispatch to complete
+        await Promise.all([fetchReisters(), dispatch(cheak_auth())]);
+      } catch (error) {
+        toast.error("Failed to load data.");
+      } finally {
+        setLoading(false); // Set loading to false after data is fetched and dispatched
+      }
+    };
+
+    fetchData();
+  }, [currentPage, dispatch]);
 
   const token = Cookies.get("authToken");
 
@@ -62,7 +80,13 @@ const RegisterCourse = () => {
   const handlePageChange = (event) => {
     setCurrentPage(Number(event.target.value));
   };
+  if (loading) {
+    return <Loader />;
+  }
 
+  if (isAuthuntucated !== 200) {
+    return <Error404 />;
+  }
   return (
     <div className="min-h-screen flex pt-[140px] items-center justify-center">
       <Toaster position="top-right" reverseOrder={false} />

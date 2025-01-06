@@ -15,6 +15,8 @@ const Manage_contact = () => {
   const token = Cookies.get("authToken");
   const data = useSelector((state) => state.contact.Contact_data);
   const isAuthuntucated = useSelector((state) => state.contact.auth_status);
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   useEffect(()=>{
 
     setContacts(data)
@@ -46,7 +48,7 @@ const dispatch = useDispatch()
    const deleteContact = async (id) => {
 
     try {
-      await axios.delete(`http://145.223.118.232:9000/api/v1/contactus/${id}`, {
+      await axios.delete(`${apiUrl}/contactus/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,55 +71,57 @@ const dispatch = useDispatch()
   }
   return (
     <div className="container pt-[140px] mx-auto p-4">
-      <Toaster position="top-right" reverseOrder={false} />
-<div className="bg-white shadow-md border  border-spacing-4 rounded-lg p-6">
-        <h1 className="text-2xl font-semibold mb-4">Contact Us</h1>
-
-        {loading ? (
-<Loader/>        ) : (
-          <div className="overflow-x-auto">
-            <table className="table-auto w-full text-sm text-left text-gray-500">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-                <tr>
-                  <th scope="col" className="px-6 py-3">Name</th>
-                  <th scope="col" className="px-6 py-3">Email</th>
-                  <th scope="col" className="px-6 py-3">Message</th>
-                  <th scope="col" className="px-6 py-3">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {contacts.length > 0 ? (
-                  contacts.map((contact) => (
-                    <tr key={contact.id} className="bg-white border-b hover:bg-gray-50">
-                      <td className="px-6 py-4">{contact.name}</td>
-                      <td className="px-6 py-4">{contact.email}</td>
-                      <td className="px-6 py-4">{contact.message}</td>
-                      <td className="px-6 py-4">
-                        <button
-                          onClick={() => deleteContact(contact._id)}
-                          className="text-white bg-red-500 hover:bg-red-600 font-medium rounded-lg text-sm px-3 py-1"
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="5" className="text-center py-4">No contacts found.</td>
+    <Toaster position="top-right" reverseOrder={false} />
+    <div className="bg-white shadow-md border border-spacing-4 rounded-lg p-6">
+      <h1 className="text-2xl font-semibold mb-4">Contact Us</h1>
+  
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full text-sm text-left text-gray-500">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+              <tr>
+                <th scope="col" className="px-6 py-3">Name</th>
+                <th scope="col" className="px-6 py-3">Email</th>
+                <th scope="col" className="px-6 py-3">Message</th>
+                <th scope="col" className="px-6 py-3">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts && contacts.length > 0 ? (
+                contacts.map((contact) => (
+                  <tr key={contact._id} className="bg-white border-b hover:bg-gray-50">
+                    <td className="px-6 py-4">{contact.name}</td>
+                    <td className="px-6 py-4">{contact.email}</td>
+                    <td className="px-6 py-4">{contact.message}</td>
+                    <td className="px-6 py-4">
+                      <button
+                        onClick={() => deleteContact(contact._id)}
+                        className="text-white bg-red-500 hover:bg-red-600 font-medium rounded-lg text-sm px-3 py-1"
+                        aria-label={`Delete contact ${contact.name}`}
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        <div className="mt-6 flex justify-center">
-       <Contact_page/>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="text-center py-4">No contacts found.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
+      )}
+  
+      <div className="mt-6 flex justify-center">
+        <Contact_page />
       </div>
-     
     </div>
+  </div>
+  
   );
 };
 

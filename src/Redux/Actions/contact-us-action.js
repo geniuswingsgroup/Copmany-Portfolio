@@ -57,7 +57,7 @@ export const cheak_auth = (
 ) => {
   return async (dispatch) => {
     try {
-      const response = await fetch('http://145.223.118.232:9000/api/v1/auth/check', {
+      const response = await fetch(`${apiUrl}/auth/check`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

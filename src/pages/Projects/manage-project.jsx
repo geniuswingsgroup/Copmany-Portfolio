@@ -23,7 +23,7 @@ const ProjectCRUD = () => {
   const [loading, setLoading] = useState(true); // Loading state
 
   const apiUrl = process.env.REACT_APP_API_URL;
-  const apiBaseUrl = `${apiUrl}/project/dashbord`;
+  const apiBaseUrl = `${apiUrl}/project`;
   const userApiUrl = `${apiUrl}/user`;
   const token = Cookies.get("authToken");
   const isAuthuntucated = useSelector((state) => state.contact.auth_status);

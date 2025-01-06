@@ -371,44 +371,63 @@ const ManageCourses = () => {
                     </div>
 
                     {/* Available */}
-                    <div>
-                      <label
-                        htmlFor="available"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Available
-                      </label>
-                      <select
-                        type="text"
-                        id="available"
-                        value={Avalable}
-                        onChange={(e) => setAvalable(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded-md"
-                      >
-                        <option value=" ">Available Or Not</option>
+                    {showUpdateModal && (
+                      <div>
+                        <label
+                          htmlFor="available"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Available
+                        </label>
+                        <select
+                          id="available"
+                          value={Avalable}
+                          onChange={(e) => setAvalable(e.target.value)}
+                          className="w-full p-2 border border-gray-300 rounded-md"
+                        >
+                          <option value="">Available or Not</option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                      </div>
+                    )}
 
-                        <option value="true">{Avalable ? "Yes" : "Yes"}</option>
-                        <option value="false">{Avalable ? "No" : "No"}</option>
-                      </select>
-                    </div>
+                    {showUpdateModal && (
+                      <div className="">
+                        <label
+                          htmlFor="TimeStart"
+                          className="block text-sm font-medium text-gray-700"
+                        >
+                          Time Start
+                        </label>
+                        <input
+                          type="date"
+                          id="TimeStart"
+                          value={TimeStart}
+                          onChange={(e) => setTimeStart(e.target.value)}
+                          className="w-full p-2 border border-gray-300 rounded-md"
+                        />
+                      </div>
+                    )}
+                  </div>
 
-                    {/* Time Start */}
-                    <div>
+                  {showUpdateModal === false ? (
+                    <div className="mb-3">
                       <label
                         htmlFor="TimeStart"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block  text-sm font-medium text-gray-700"
                       >
                         Time Start
                       </label>
                       <input
-                        type="text"
+                        type="date"
                         id="TimeStart"
                         value={TimeStart}
                         onChange={(e) => setTimeStart(e.target.value)}
                         className="w-full p-2 border border-gray-300 rounded-md"
                       />
                     </div>
-                  </div>
+                  ) : null}
 
                   {/* Full-Width Description */}
                   <div className="mb-4">

@@ -21,12 +21,16 @@ const Projects = ({ data }) => {
               <span className="text-sm text-[#b29336] font-[500]  block">
                 Genius Wings
               </span>
-              <h2 className="text-4xl font-[500] text-gray-900 leading-[3.25rem] mb-8">
+              <h2 className="text-4xl font-[500] text-gray-900 leading-[3.25rem] lg:mb-3 mb-8">
                 Our Work{" "}
                 <span className="text-transparent bg-clip-text bg-[#b29336]">
                   Portfolio
                 </span>
               </h2>
+              <p className="text-gray-500 mb-7 lg:flex hidden text-base font-normal leading-relaxed lg:text-start ">
+                      We specialize in delivering custom software solutions, innovative apps, and seamless web designs. Our portfolio highlights our expertise in creating impactful, user-focused solutions that help businesses thrive in the digital landscape.
+
+</p>
               <div className="flex items-center justify-center lg:justify-start ">
                 <button
                   id="slider-button-left"

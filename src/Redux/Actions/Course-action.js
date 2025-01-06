@@ -36,7 +36,7 @@ export const course_search = (keyword="",price_gte,price_lte) => {
     //keyword=string ----- for search
     //price[gte]=number&field[lte]=number ----- for filter
       const response = await axios.get(
-        `${apiUrl}/course?limit=12&keyword=${keyword}`);
+        `${apiUrl}/course?limit=12&keyword=${keyword}&price[gte]=${price_gte}&price[lte]=${price_lte}`);
 
       const data = response.data.data;
       const total_pages = response.data.paginationResult.numberOfPages;
@@ -52,7 +52,7 @@ toast.error('Error getting data')
 };
 
 export const CORSE_FILTER = "CORSE_FILTER";
-export const course_filter = (price_gte,price_lte) => {
+export const course_filter =(keyword="",price_gte,price_lte) => {
   return async (dispatch) => {
     try {
     //query       
@@ -60,7 +60,7 @@ export const course_filter = (price_gte,price_lte) => {
     //keyword=string ----- for search
     //price[gte]=number&field[lte]=number ----- for filter
       const response = await axios.get(
-        `${apiUrl}/course?limit=12&price[gte]=${price_gte}&price[lte]=${price_lte}`);
+        `${apiUrl}/course?limit=12&keyword=${keyword}&price[gte]=${price_gte}&price[lte]=${price_lte}`);
 
       const data = response.data.data;
       const total_pages = response.data.paginationResult.numberOfPages;

@@ -50,7 +50,7 @@ const AllCourses = () => {
 
   const searchSubmit = async () => {
     setLoading(true);
-    await dispatch(course_search(searchKeyword));
+    await dispatch(course_search(searchKeyword,gteFilter, lteFilter));
     setLoading(false);
     dispatch(keyword_value(searchKeyword));
 
@@ -59,7 +59,7 @@ const AllCourses = () => {
 
   const filterSubmit = async () => {
     setLoading(true);
-    await dispatch(course_filter(gteFilter, lteFilter));
+    await dispatch(course_filter(searchKeyword,gteFilter, lteFilter));
     setLoading(false);
     dispatch(gte_value(gteFilter));
     dispatch(lte_value(lteFilter));
@@ -201,7 +201,7 @@ const AllCourses = () => {
                     <div className="grid  grid-cols-1 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2 max-w-[1700px] gap-4 min-w-[100%]">
                       {courses.map((data) => {
                         return (
-                          <div className="swiper-slide ">
+                          <div key={data._id} className="swiper-slide ">
                             <Link
                               to={`/Course-detail/${data._id}`}
                               key={data._id}
@@ -214,7 +214,7 @@ const AllCourses = () => {
                                       {data.name}
                                     </span>{" "}
                                     {/* Name at the start */}
-                                    <span className="text-amber-500 font-semibold">
+                                    <span className="text-primary font-semibold">
                                       {data.price}
                                     </span>{" "}
                                     {/* Price at the end */}
@@ -248,7 +248,7 @@ const AllCourses = () => {
           </div>
 
           {total_courses > 12 && courses.length > 0 ? (
-            <div className="freelancer-pagination my-[30px]  flex justify-center   ">
+            <div className="freelancer-pagination mb-[30px] mt-[-80px]  flex justify-center   ">
               <PaginationComponent />
             </div>
           ) : null}

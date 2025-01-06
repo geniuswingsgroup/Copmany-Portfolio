@@ -10,12 +10,13 @@ const TeamDetails = () => {
   const [details, setDetails] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     if (id) {
       // Fetch course details if courseId is available in the URL
       axios
-        .get(`http://145.223.118.232:9000/api/v1/ourteam/${id}`)
+        .get(`${apiUrl}/ourteam/${id}`)
         .then((response) => {
           if (response.data.data) {
             setDetails(response.data.data); // Set course details from API
