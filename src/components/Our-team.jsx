@@ -41,7 +41,7 @@ const Our_team = ({ data }) => {
         <section className="py-[50px]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto w-full mb-[100px] text-center">
-              <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-primary">
+              <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
                 Meet Our Team
               </h2>
               <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
@@ -69,14 +69,14 @@ const Our_team = ({ data }) => {
                           className="w-40 h-40 p-1 rounded-full mx-auto transition-all duration-500 object-contain border border-gray-100 border-solid border-transparent group-hover:border-primary"
                         />
                       </div>
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-primary">
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-transparent bg-clip-text group-hover:bg-primary">
                         {data.name}
                       </h4>
                       <div className="flex flex-col items-center gap-3">
                         <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                          {data.PartInTeam}
+                          {data.job_title}
                         </span>
-                        <div className="flex gap-1 items-center text-primary">
+                        <div className="flex gap-1 items-center text-transparent bg-clip-text bg-primary">
                           <p className="text-sm">Show Profile</p>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

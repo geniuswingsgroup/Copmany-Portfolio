@@ -74,20 +74,20 @@ const Allprojects = () => {
                 return (
                   <a key={project._id}
                     href={project.url ? project.url : null}
-                    className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[300px] p-4 hover:border-[#b29336]"
+                    className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[350px] p-4 hover:border-primary"
                   >
                     <div className="flex flex-col gap-5">
                       <img
-                            className=" w-full rounded-[10px] object-cover max-h-[300px]"
+                            className=" w-full rounded-[10px] object-cover max-h-[200px]"
                             src={project.image}
                         alt="Ghaith Adnan"
                       />
                       <div className="grid">
                         <h5 className="text-gray-900 text-lg font-[500]">{project.name}</h5>
       
-                        <div className="flex flex-col  gap-1">
+                        <div className="flex justify-between  gap-1">
                           <p className="font-medium text-gray-600 text-sm">Developer By</p>
-                          <div className="flex flex-wrap gap-2 text-[#b29336]">
+                          <div className="flex flex-wrap gap-2 text-transparent bg-clip-text bg-primary">
                             {project.TeamWork.map((users, index) => {
                               return (
                                 <div key={index}>

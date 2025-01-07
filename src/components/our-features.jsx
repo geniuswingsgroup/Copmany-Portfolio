@@ -50,7 +50,7 @@ const Our_features = ({ data }) => {
                 <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
                   <div className="w-full flex-col justify-center items-start gap-8 flex">
                     <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-                    <h2 className="font-display text-[30px] lg:text-4xl  font-[600] text-[#b29336]">
+                    <h2 className="font-display bg-clip-text text-[30px] lg:text-4xl  font-[600] text-primary">
                     Key Features of Our Services
                       </h2>
                       <p className="text-gray-500 text-base font-normal sm:text-center leading-relaxed lg:text-start ">
@@ -67,7 +67,7 @@ const Our_features = ({ data }) => {
                         <h6 className="text-gray-500 text-base font-normal leading-relaxed">Successful Projects</h6>
                       </div>
                       <div className="flex-col justify-start items-start inline-flex">
-                        <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">20+</h4>
+                        <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">9+</h4>
                         <h6 className="text-gray-500 text-base font-normal leading-relaxed">Happy Clients</h6>
                       </div>
                     </div>

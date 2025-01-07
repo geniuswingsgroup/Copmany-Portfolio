@@ -30,7 +30,7 @@ const Courses = ({ data }) => {
       <div className="flex justify-center w-full p-4 py-16 md:px-10 md:py-16 bg-gray-50 to-blue-100">
         <div className="mx-auto 2xl:max-w-[1600px] md:max-w-[1270px]">
           <div className="mx-auto w-full mb-[100px] text-center">
-            <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-[#b29336]">
+            <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
               Courses
             </h2>
             <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
@@ -60,7 +60,7 @@ const Courses = ({ data }) => {
                     <h6 className="font-semibold text-base leading-7 line-clamp-2 text-black">
                       {course.name}
                     </h6>
-                    <h6 className="font-semibold text-base leading-7 text-primary text-right">
+                    <h6 className="font-semibold text-base leading-7 text-transparent bg-clip-text bg-primary text-right">
                       {course.price}
                     </h6>
                   </div>
@@ -84,7 +84,7 @@ const Courses = ({ data }) => {
           <Link
             to={"/courses"}
             dir="rtl"
-            className="mt-[20px] flex gap-1 items-center hover:text-[#b29336]"
+            className="mt-[20px] flex gap-1 items-center hover:text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

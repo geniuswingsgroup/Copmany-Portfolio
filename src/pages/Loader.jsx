@@ -11,7 +11,7 @@ const Model = () => {
 const Loader = () => {
   return (
     <div style={{  height: "100vh" }} className="bg-white z-50 h-screen flex justify-center items-center fixed left-0 top-0 w-full">
- <div className=" border-primary border-0 border-t-4 
+ <div className=" border-primary gradient-border border-0 border-t-4 
   w-[150px]
   h-[150px]
   rounded-full

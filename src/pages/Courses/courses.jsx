@@ -78,7 +78,7 @@ const AllCourses = () => {
       ) : (
         <div className="min-h-screen flex flex-col justify-between">
           <div className="pt-[70px] mx-auto w-full main-freeLancer-container">
-            <div className="w-full md:h-[250px] flex  flex-col justify-center bg-primary h-[180px] ">
+            <div className="w-full md:h-[250px] flex  flex-col justify-center details-cover h-[180px] ">
               <div className="flex justify-center w-full  items-center">
                 <div className="flex flex-col mx-[50px]  w-full items-center gap-4">
                   <h1 className="text-white font-[300] md:text-[22px] text-[18px] text-center">
@@ -176,7 +176,7 @@ const AllCourses = () => {
                                 name=""
                                 id=""
                               />
-                              <button className="bg-primary text-white px-3 py-2 ml-2 rounded-md">
+                              <button className="bg-primary hover:bg-hover active:bg-active text-white px-3 py-2 ml-2 rounded-md">
                                 filter
                               </button>
                             </form>
@@ -210,7 +210,7 @@ const AllCourses = () => {
                               <div className="group bg-white flex justify-between flex-col sm:min-h-[275px] sm:max-h-[400px] min-h-[400px] border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md slide_active:border-indigo-600">
                                 <div className="max-w-full">
                                   <div className="flex justify-between w-full items-center mb-3 gap-2 transition-all duration-500">
-                                    <span className="text-gray-900 font-semibold">
+                                    <span className="text-gray-900 font-semibold break-words max-w-[90%]">
                                       {data.name}
                                     </span>{" "}
                                     {/* Name at the start */}

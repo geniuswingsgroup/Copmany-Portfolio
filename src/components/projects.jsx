@@ -18,12 +18,12 @@ const Projects = ({ data }) => {
         <div className="mx-auto  2xl:max-w-[1600px] md:max-w-[1270px]  ">
           <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
             <div className="w-full lg:w-2/5">
-              <span className="text-sm text-[#b29336] font-[500]  block">
+              <span className="text-sm text-transparent bg-clip-text bg-primary font-[500]  block">
                 Genius Wings
               </span>
               <h2 className="text-4xl font-[500] text-gray-900 leading-[3.25rem] lg:mb-3 mb-8">
                 Our Work{" "}
-                <span className="text-transparent bg-clip-text bg-[#b29336]">
+                <span className="text-transparent bg-clip-text bg-primary">
                   Portfolio
                 </span>
               </h2>
@@ -34,11 +34,11 @@ const Projects = ({ data }) => {
               <div className="flex items-center justify-center lg:justify-start ">
                 <button
                   id="slider-button-left"
-                  className="swip-button-prev group flex justify-center items-center border mr-3 border-solid   border-[#b29336] hover:bg-[#c5a33d] active:bg-[#a38631] min-w-12 h-12 transition-all duration-500 rounded-lg"
+                  className="swip-button-prev group flex justify-center items-center border mr-3 border-solid   border-primary hover:bg-primary active:bg-active min-w-12 h-12 transition-all duration-500 rounded-lg"
                   data-carousel-next
                 >
                   <svg
-                    className="h-6 w-6 text-[#b29336] group-hover:text-white"
+                    className="h-6 w-6 text-primary group-hover:text-white"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,11 +54,11 @@ const Projects = ({ data }) => {
                 </button>
                 <button
                   id="slider-button-right"
-                  className="swip-button-prev group flex justify-center items-center border mr-3 border-solid   border-[#b29336] hover:bg-[#c5a33d] active:bg-[#a38631] min-w-12 h-12 transition-all duration-500 rounded-lg"
+                  className="swip-button-prev group flex justify-center items-center border mr-3 border-solid   border-primary hover:bg-primary active:bg-active min-w-12 h-12 transition-all duration-500 rounded-lg"
                   data-carousel-next
                 >
                   <svg
-                    className="h-6 w-6 text-[#b29336] group-hover:text-white"
+                    className="h-6 w-6 text-primary group-hover:text-white"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Projects = ({ data }) => {
         {data.map((project) => {
   return (
     <SwiperSlide key={`${project._id}-${project.name}`}> {/* Combine _id with name for uniqueness */}
-      <a href={project.url ? project.url : null} className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[300px] p-4 hover:border-[#b29336]">
+      <a href={project.url ? project.url : null} className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[300px] p-4 hover:border-primary">
         <div className="flex flex-col gap-5">
           <img className="w-full rounded-[10px] object-cover max-h-[300px]" src={project.image} alt="Project" />
           <div className="grid">
@@ -138,7 +138,7 @@ const Projects = ({ data }) => {
           <Link
             to={"/Our-Projects"}
             dir="rtl"
-            className="mt-[17px] flex gap-1 items-center hover:text-[#b29336] "
+            className="mt-[17px] flex gap-1 items-center hover:text-primary "
           >
             {" "}
             <svg

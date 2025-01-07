@@ -3,13 +3,14 @@ import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import Cookies from "js-cookie";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -26,7 +27,7 @@ const LoginPage = () => {
 
       // Save token in cookies
       Cookies.set("authToken", token, { expires: 7 }); // Expires in 7 days
-
+      navigate('/')
       toast.success("Logged in successfully!");
     } catch (error) {
       if (error.response) {

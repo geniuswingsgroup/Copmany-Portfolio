@@ -25,23 +25,23 @@ const Footer = () => {
         />
         <h2 className="md:text-[25px] text-[17px] mt-2  font-[500] text-gray-800 leading-[3.25rem]">
           Genius
-          <span className="text-transparent bg-clip-text bg-[#b29336]">
+          <span className="text-transparent bg-clip-text bg-primary">
             Wings
           </span>
         </h2>
       </Link>
               <div className="flex flex-col gap-9 mt-[50px]">
                 <li className="flex items-center justify-center gap-2 lg:justify-start">
-                  <EmailOutlinedIcon style={{ color: '#b29336' }} />
+                  <EmailOutlinedIcon style={{ color: '#2563eb' }} />
                   info@genius-wings.com
                 </li>
                 <li className="flex items-center justify-center gap-2 lg:justify-start">
-                  <LocalPhoneOutlinedIcon style={{ color: "#b29336" }} />
+                  <LocalPhoneOutlinedIcon style={{ color: "#2563eb" }} />
                   +964 07730279390
 
                 </li>
                 <li className="flex items-center justify-center gap-2 lg:justify-start">
-                  <FmdGoodOutlinedIcon style={{ color: "#b29336" }} />
+                  <FmdGoodOutlinedIcon style={{ color: "#2563eb" }} />
                   Kirkuk, Iraq
                 </li>
               </div>
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="py-7 border-t flex bg-[#b29336] justify-center border-gray-200">
+      <div className="py-7 border-t flex bg-primary justify-center border-gray-200">
         <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
           <span className="text-sm text-white">©<a href="https://pagedone.io/">GeniusWing Group</a> 2024, All rights reserved.</span>
         </div>

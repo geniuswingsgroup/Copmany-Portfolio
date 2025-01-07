@@ -56,10 +56,10 @@ const All_features = () => {
     ) : (
       <div>
         <div className="pt-[100px]">
-          <div className="flex justify-center w-full p-4 py-16 md:py-16 to-primary">
+          <div className="flex justify-center w-full p-4 py-16 md:py-16 ">
             <div className="2xl:max-w-[1600px] md:max-w-[1200px]">
               <div className="mx-auto w-full mb-[100px] text-center">
-                <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-primary">
+                <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
                   Our Key Features
                 </h2>
                 <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
@@ -69,23 +69,48 @@ const All_features = () => {
                 </div>
               </div>
 
-              <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 2xl:grid-cols-4 md:grid-cols-3">
-                {Features.map((data) => (
-                  <div
-                    key={data._id} // Assuming each feature has a unique 'id'
-                    className="relative overflow-hidden rounded-lg min-w-[300px] border bg-white/60 p-2"
-                  >
-                    <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                      <div className="space-y-2">
-                        <h3 className="font-[600] text-lg text-primary">{data.Title}</h3>
-                        <p className="text-sm text-muted-foreground break-words line-clamp-2">
-                          {data.description}
-                        </p>
-                      </div>
+              <div className="flex flex-col  min-w-[100%]">
+                    <div className="grid  grid-cols-1 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2 max-w-[1700px] gap-4 min-w-[100%]">
+                      {Features.map((data) => {
+                        return (
+                          <div key={data._id} className="swiper-slide ">
+                            <div
+                              key={data._id}
+                            >
+                              {" "}
+                              <div className="group bg-white flex justify-between flex-col sm:min-h-[275px] sm:max-h-[400px] min-h-[400px] border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md slide_active:border-indigo-600">
+                                <div className="max-w-full">
+                                  <div className="flex justify-between w-full items-center mb-3 gap-2 transition-all duration-500">
+                                    <span className="text-transparent break-words max-w-full text-lg bg-clip-text bg-primary font-semibold">
+                                      {data.Title}
+                                    </span>{" "}
+                                    {/* Name at the start */}
+                                 
+                                    {/* Price at the end */}
+                                  </div>
+                                  <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-gray-600 line-clamp-3 break-words duration-500 mb-4">
+                                    {data.description}
+                                  </p>
+                                </div>
+                                <div className="flex items-center max-w-full gap-4 border-t border-solid border-gray-200 pt-4">
+                                  <img
+                                    className="h-[200px] w-full rounded-lg object-cover border border-gray-300"
+                                    src={data.image}
+                                    alt={`${data.name} avatar`}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
+                    <p className="text-center my-[50px]">
+                      {Features.length <= 0
+                        ? " Were sorry, but it seems there is no data available at the moment. Please check back later or contact us if you believe this is an error"
+                        : null}
+                    </p>
                   </div>
-                ))}
-              </div>
 
               {total_data > 12 && Features.length > 0 ? (
                 <div className="flex justify-center mt-8">

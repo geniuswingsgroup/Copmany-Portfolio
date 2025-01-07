@@ -42,10 +42,10 @@ const Navbar = () => {
       <Link to={"/"} className="flex items-center gap-2 text-primary ">
         <img
           src={brand}
-          className="md:h-[57px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
+          className="md:h-[52px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
           alt="Message Shield"
         />
-        <h2 className="md:text-[25px] text-[17px] mt-2  font-[500] text-gray-800 leading-[3.25rem]">
+        <h2 className="md:text-[23px] text-[17px] mt-1  font-[500] text-gray-800 leading-[3.25rem]">
           Genius
           <span className="text-transparent bg-clip-text bg-primary">
             Wings
@@ -87,7 +87,7 @@ const Navbar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
-                    stroke="#b29336"
+                    stroke="#2563eb"
                     className="w-6 h-6"
                   >
                     <path
@@ -139,13 +139,13 @@ const Navbar = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-     <Link to={"/"} className="flex items-center gap-2 text-primary mt-[-12px]">
+     <Link to={"/"} className="flex items-center gap-2 text-primary mt-[-16px]">
         <img
           src={brand}
-          className="md:h-[57px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
+          className="md:h-[57px] sm:mt-[-16px]  mt-[-9px] h-[40px]"
           alt="Message Shield"
         />
-        <h2 className="md:text-[25px] text-[17px] mt-2  font-[500] text-gray-800 leading-[3.25rem]">
+        <h2 className="md:text-[22px] text-[17px] mt-2  font-[500] text-gray-800 leading-[3.25rem]">
           Genius
           <span className="text-transparent bg-clip-text bg-primary">
             Wings

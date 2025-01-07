@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { contact_form } from "../../Redux/Actions/contact-us-action";
 import { Toaster } from "react-hot-toast";
@@ -9,7 +9,9 @@ const Contact_us = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+ useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
 
   const resetInputs = () => {

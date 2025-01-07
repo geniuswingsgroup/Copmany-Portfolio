@@ -2,42 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import AddIcCallOutlinedIcon from "@mui/icons-material/AddIcCallOutlined";
-import image from "../assets/images/undraw_progressive-app_9517 (3).svg";
+import image from "../assets/images/undraw_progressive-app_9517 (4).svg"
 
 export default () => {
   return (
     <div className="flex pt-[80px] h-screen items-center">
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full stroke-black/15 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-            width="200"
-            height="200"
-            x="100%"
-            y="-1"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none"></path>
-          </pattern>
-        </defs>
-        {/* <svg x="50%" y="-1" className="overflow-visible fill-gray-800/20">
-            <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" strokeWidth="0"></path>
-          </svg> */}
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth="0"
-          fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-        ></rect>
-      </svg>
+
       <div className="mx-auto relative ">
         <div className="absolute inset-0 blur-xl h-[580px]"></div>
         <div className="relative">
           <section>
-            <div className=" mx-auto px-4 py-28 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
+            <div className=" mx-auto px-4 py-28 2xl:gap-[200px] text-gray-600 overflow-hidden md:px-8 md:flex">
               <div className="flex-none space-y-5 2xl:max-w-5xl max-w-3xl">
                 <Link
                   to={"/Our-features"}
@@ -64,8 +39,8 @@ export default () => {
                 </Link>
                 <h1 className="mx-auto max-w-8xl font-display text-[30px]  lg:text-5xl md:text-5xl  font-[600] tracking-tight text-slate-900">
                   <span className="inline-block">
-                    Empowering Innovation Building{" "}
-                    <span className="text-primary"> the Future</span>{" "}
+                    Empowering Innovation Building
+                    <span className="text-transparent bg-clip-text 2xl:block bg-primary"> the Future</span>{" "}
                     <span className="relative text-primary ml-3"></span>
                   </span>
                 </h1>

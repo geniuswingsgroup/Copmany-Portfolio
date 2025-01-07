@@ -122,3 +122,43 @@ export const lte_value = (search) => {
     search: search,
   };
 };
+export const REGISTER_UPDATE = "REGISTER_UPDATE";
+
+export const register_update = (
+  id,
+  name,
+  email,
+  phone,
+
+) => {
+  return async (dispatch) => {
+    try {
+      const token = Cookies.get('jwt');
+     
+
+      const response = await axios.put(
+       ` ${apiUrl}/register/${id}`,
+        {
+          name,
+          email,
+          phone,
+        },
+        {
+          // headers: {
+          //   Authorization: `Bearer ${token}`,
+          // },
+          credentials: 'include', // include credentials if needed
+        }
+      );
+      const data = response.data.data;
+      dispatch({ type: REGISTER_UPDATE, payload: { data } });
+      toast.success('Updated successfuly'); // Using translation function passed as parameter
+
+
+
+    } catch (error) {
+      const  isInserted=false
+toast.error('Update Failed')
+    }
+  };
+};

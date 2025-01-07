@@ -11,7 +11,7 @@ const Companys = () => {
     <section className="py-[60px] p-4 mb-[50px] ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto w-full mb-[100px] text-center">
-          <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-[#b29336]">
+          <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
             Our Partners
           </h2>
           <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">

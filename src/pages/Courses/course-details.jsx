@@ -169,7 +169,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex space-x-4 mb-6">
-                <button onClick={openModal} className="bg-primary flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-hover focus:outline-none ">
+                <button onClick={openModal} className="bg-primary flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-hover active:bg-active focus:outline-none ">
                   {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

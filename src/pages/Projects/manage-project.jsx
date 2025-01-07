@@ -99,17 +99,24 @@ const ProjectCRUD = () => {
   };
 
   // Delete project
-  const deleteProject = async (id) => {
-    try {
-      await axios.delete(`${apiBaseUrl}/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      toast.success("Project deleted successfully");
-      fetchProjects();
-    } catch (error) {
-      toast.error("Error deleting project: " + error.message);
-    }
-  };
+// Delete project
+const deleteProject = async (id) => {
+  const isConfirmed = window.confirm("Are you sure you want to delete this project?");
+  if (!isConfirmed) {
+    return; // Cancel the delete operation if the user clicks "Cancel"
+  }
+
+  try {
+    await axios.delete(`${apiBaseUrl}/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    toast.success("Project deleted successfully");
+    fetchProjects();
+  } catch (error) {
+    toast.error("Error deleting project: " + error.message);
+  }
+};
+
 
   // Reset form
   const resetForm = () => {

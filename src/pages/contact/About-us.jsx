@@ -16,7 +16,7 @@ const About_us = () => {
           {/* Title */}
           <div className="2xl:max-w-[1600px] md:max-w-[1270px]">
             <div className="mx-auto w-full mb-[100px] text-center">
-              <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-[#b29336]">
+              <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
                 About Us
               </h2>
               <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
@@ -37,7 +37,7 @@ const About_us = () => {
                       alt=""
                     />
                     <div>
-                      <p className="mt-6 text-sm text-primary uppercase">
+                      <p className="mt-6 text-sm text-transparent bg-clip-text bg-primary uppercase">
                         GeniusWings Group
                       </p>
 
@@ -51,7 +51,7 @@ const About_us = () => {
 
                   <div className="mt-8 lg:w-2/4 lg:mt-0 lg:px-6">
                     <div>
-                      <h3 className="text-primary capitalize">
+                      <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Innovative Solutions
                       </h3>
                       <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
@@ -64,7 +64,7 @@ const About_us = () => {
                     <hr className="my-6 border-gray-200 " />
 
                     <div>
-                      <h3 className="text-primary capitalize">
+                      <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Expert Development Team
                       </h3>
                       <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
@@ -77,7 +77,7 @@ const About_us = () => {
                     <hr className="my-6 border-gray-200 " />
 
                     <div>
-                      <h3 className="text-primary capitalize">
+                      <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Client-Centered Approach
                       </h3>
                       <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
@@ -90,7 +90,7 @@ const About_us = () => {
                     <hr className="my-6 border-gray-200 " />
 
                     <div>
-                      <h3 className="text-primary capitalize">
+                      <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Commitment to Excellence
                       </h3>
                       <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
