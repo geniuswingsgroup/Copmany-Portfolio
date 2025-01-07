@@ -4,6 +4,7 @@ import { contact_form } from "../../Redux/Actions/contact-us-action";
 import { Toaster } from "react-hot-toast";
 import Footer from "../../components/layouts/footer";
 import ContactCard from "./contact-card";
+import { Helmet } from "react-helmet-async";
 
 const Contact_us = () => {
   const [name, setName] = useState("");
@@ -27,6 +28,65 @@ const Contact_us = () => {
 
   return (
     <div className="flex flex-col pt-[120px] justify-between min-h-screen">
+      <Helmet>
+  {/* Basic Meta Tags */}
+  <title>Contact Us - Genius Wings Company</title>
+  <meta
+    name="description"
+    content="Get in touch with Genius Wings Company. Whether you have a question about our web development, app development, business solutions, or any of our other services, we're here to assist you. Reach out today!"
+  />
+  <meta
+    name="keywords"
+    content="contact us, Genius Wings Company, contact, customer support, web development, app development, business solutions, reach out"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="Contact Us - Genius Wings Company" />
+  <meta
+    property="og:description"
+    content="Have a question or need support? Contact Genius Wings Company for inquiries about our web development, app development, or business solutions. Our team is here to help."
+  />
+  <meta
+    property="og:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta property="og:url" content="http://genius-wings.com/Contact-us" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us - Genius Wings Company" />
+  <meta
+    name="twitter:description"
+    content="Reach out to Genius Wings Company for support or questions about our services. Our team is ready to assist you with web development, app development, business solutions, and more."
+  />
+  <meta
+    name="twitter:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta name="twitter:url" content="http://genius-wings.com/Contact-us" />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href="http://genius-wings.com/Contact-us" />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Contact Us",
+        "description": "Contact Genius Wings Company for inquiries about our web and app development services, business solutions, or customer support. We're here to help.",
+        "url": "http://genius-wings.com/Contact-us",
+        "image": "http://genius-wings.com/images/Brand-Logo.png"
+      }
+    `}
+  </script>
+</Helmet>
+
     <Toaster position="top-right" reverseOrder={false} />
     <div className="container my-12 mx-auto px-2 md:px-4">
       <section className="mb-32">

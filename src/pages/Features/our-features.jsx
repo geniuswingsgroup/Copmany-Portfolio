@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Loader from "../Loader";
+import { Helmet } from "react-helmet-async";
 
 const All_features = () => {
   const [Features, setFeatures] = useState([]); // Initialize as empty array
@@ -51,6 +52,66 @@ const All_features = () => {
   };
   return (
     <div className="flex flex-col justify-between min-h-screen">
+   <Helmet>
+  {/* Basic Meta Tags */}
+  <title>Our Features - Genius Wings Company</title>
+  <meta
+    name="description"
+    content="Explore the innovative features offered by Genius Wings Company, including expert web development, app development, software solutions, professional Photoshop services, business development, and much more."
+  />
+  <meta
+    name="keywords"
+    content="our features, Genius Wings features, web development, app development, software development, business development, Photoshop services, innovative features, professional solutions"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="Our Features - Genius Wings Company" />
+  <meta
+    property="og:description"
+    content="Discover the powerful features that set Genius Wings Company apart, from web and app development to business solutions, software services, and professional Photoshop capabilities."
+  />
+  <meta
+    property="og:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta property="og:url" content="http://genius-wings.com/Our-features" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Features - Genius Wings Company" />
+  <meta
+    name="twitter:description"
+    content="Learn about the diverse and innovative features of Genius Wings Company, including expert web and app development, software, Photoshop services, business development, and more."
+  />
+  <meta
+    name="twitter:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta name="twitter:url" content="http://genius-wings.com/Our-features" />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href="http://genius-wings.com/Our-features" />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Our Features",
+        "description": "Explore the innovative and powerful features of Genius Wings Company, including web development, app development, software solutions, Photoshop services, and business development.",
+        "url": "http://genius-wings.com/Our-features",
+        "image": "http://genius-wings.com/images/Brand-Logo.png"
+      }
+    `}
+  </script>
+</Helmet>
+
+
     {loading ? (
       <Loader />
     ) : (
@@ -73,35 +134,34 @@ const All_features = () => {
                     <div className="grid  grid-cols-1 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2 max-w-[1700px] gap-4 min-w-[100%]">
                       {Features.map((data) => {
                         return (
-                          <div key={data._id} className="swiper-slide ">
+                          <div key={data._id} className="swiper-slide">
+                          <di key={data._id}>
                             <div
-                              key={data._id}
+                              className="group bg-white flex justify-between border flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
+                              style={{ minHeight: "400px", maxHeight: "400px" }}
                             >
-                              {" "}
-                              <div className="group bg-white flex justify-between flex-col sm:min-h-[275px] sm:max-h-[400px] min-h-[400px] border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md slide_active:border-indigo-600">
-                                <div className="max-w-full">
-                                  <div className="flex justify-between w-full items-center mb-3 gap-2 transition-all duration-500">
-                                    <span className="text-transparent break-words max-w-full text-lg bg-clip-text bg-primary font-semibold">
-                                      {data.Title}
-                                    </span>{" "}
-                                    {/* Name at the start */}
-                                 
-                                    {/* Price at the end */}
-                                  </div>
-                                  <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-gray-600 line-clamp-3 break-words duration-500 mb-4">
-                                    {data.description}
-                                  </p>
+                              <div className="flex-grow max-w-full">
+                                <div className="flex justify-between w-full items-center mb-3 gap-2 transition-all duration-500">
+                                  
+                                  <span className="text-primary break-words max-w-full font-semibold">
+                                    {data.Title}
+                                  </span>
                                 </div>
-                                <div className="flex items-center max-w-full gap-4 border-t border-solid border-gray-200 pt-4">
-                                  <img
-                                    className="h-[200px] w-full rounded-lg object-cover border border-gray-300"
-                                    src={data.image}
-                                    alt={`${data.name} avatar`}
-                                  />
-                                </div>
+                                <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-gray-600 line-clamp-3 break-words duration-500 mb-4">
+                                  {data.description}
+                                </p>
+                              </div>
+                              <div className="flex items-center justify-center max-w-full">
+                                <img
+                                  className="rounded-lg object-cover"
+                                  style={{ height: "200px", width: "100%" }}
+                                  src={data.image}
+                                  alt={`${data.name} image`}
+                                />
                               </div>
                             </div>
-                          </div>
+                          </di>
+                        </div>
                         );
                       })}
                     </div>

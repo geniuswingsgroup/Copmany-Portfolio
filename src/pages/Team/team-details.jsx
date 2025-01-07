@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Error404 from "../error404-page";
 import Loader from "../Loader";
+import { Helmet } from "react-helmet-async";
 
 const TeamDetails = () => {
   const { id } = useParams();
@@ -55,6 +56,72 @@ const TeamDetails = () => {
 
   return (
     <div className="flex flex-col min-h-screen justify-between">
+      <Helmet>
+  {/* Basic Meta Tags */}
+  <title>{`${details ? details.name : 'Team Member'} - Genius Wings Company`}</title>
+  <meta
+    name="description"
+    content={`${details ? `${details.name}, ${details.job_title} at Genius Wings Company. Learn more about their experience, skills, and role at our company.` : 'Team member details at Genius Wings Company'}`}
+  />
+  <meta
+    name="keywords"
+    content={`${details ? `${details.name}, ${details.job_title}, team member, Genius Wings Company, professional details, experience, role` : 'team member, Genius Wings Company, about team'}`}
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content={`${details ? details.name : 'Team Member'} - Genius Wings Company`} />
+  <meta
+    property="og:description"
+    content={`${details ? `${details.name} is a ${details.job_title} at Genius Wings Company, with expertise in ${details.experience} years of experience.` : 'Meet our talented team members at Genius Wings Company.'}`}
+  />
+  <meta
+    property="og:image"
+    content={details ? details.image : 'http://genius-wings.com/images/Brand-Logo.png'}
+  />
+  <meta property="og:url" content={`http://genius-wings.com/team-details/${id}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${details ? details.name : 'Team Member'} - Genius Wings Company`} />
+  <meta
+    name="twitter:description"
+    content={`${details ? `${details.name} is a ${details.job_title} with ${details.experience} years of experience in the field.` : 'Meet our talented team members at Genius Wings Company.'}`}
+  />
+  <meta
+    name="twitter:image"
+    content={details ? details.image : 'http://genius-wings.com/images/Brand-Logo.png'}
+  />
+  <meta name="twitter:url" content={`http://genius-wings.com/team-details/${id}`} />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href={`http://genius-wings.com/team-details/${id}`} />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "${details ? details.name : 'Team Member'}",
+        "jobTitle": "${details ? details.job_title : 'Team Member'}",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Genius Wings Company"
+        },
+        "url": "http://genius-wings.com/team-details/${id}",
+        "image": "${details ? details.image : 'http://genius-wings.com/images/Brand-Logo.png'}",
+        "description": "${details ? details.description : 'Learn more about our team at Genius Wings Company.'}",
+        "telephone": "+964${details ? details.user.phon_number : ''}",
+        "email": "${details ? details.user.email : ''}"
+      }
+    `}
+  </script>
+</Helmet>
+
       <div>
         <section className="main-freeLancer-container relative pt-10 md:pt-40 mt-8 md:mt-[70px]">
           <div className="details-cover w-full absolute top-0 left-0 z-0 h-40 md:h-60 b"></div>

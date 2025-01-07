@@ -7,6 +7,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { useParams } from "react-router-dom"; // Import useParams for URL params
 import Loader from "../Loader";
 import Error404 from "../error404-page";
+import { Helmet } from "react-helmet-async";
 
 Modal.setAppElement("#root");
 
@@ -112,6 +113,78 @@ const CourseDetails = () => {
 
   return (
     <div className="flex flex-col justify-between min-h-screen">
+<Helmet>
+  {/* Basic Meta Tags */}
+  <title>{courseDetails ? `${courseDetails.name} - Genius Wings Company` : "Course Details - Genius Wings Company"}</title>
+  <meta
+    name="description"
+    content={courseDetails ? `Learn about ${courseDetails.name}, instructed by ${courseDetails.user?.name}. The course starts on ${courseDetails.TimeStart}.` : "Explore the details of our premium courses offered by Genius Wings Company."}
+  />
+  <meta
+    name="keywords"
+    content="Course details, Genius Wings Company, online courses, course schedules, course pricing, premium education, expert lecturers"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content={courseDetails ? `${courseDetails.name} - Genius Wings Company` : "Course Details - Genius Wings Company"} />
+  <meta
+    property="og:description"
+    content={courseDetails ? `Discover ${courseDetails.name} by ${courseDetails.user?.name}, starting on ${courseDetails.TimeStart}. Enhance your knowledge with this course.` : "Discover our top courses provided by Genius Wings Company."}
+  />
+  <meta
+    property="og:image"
+    content={courseDetails?.image ? courseDetails.image : "http://genius-wings.com/images/Brand-Logo.png"}
+  />
+  <meta
+    property="og:url"
+    content={window.location.href} // Uses the current page URL dynamically
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={courseDetails ? `${courseDetails.name} - Genius Wings Company` : "Course Details - Genius Wings Company"} />
+  <meta
+    name="twitter:description"
+    content={courseDetails ? `Explore ${courseDetails.name}, starting on ${courseDetails.TimeStart}. Learn from expert lecturer ${courseDetails.user?.name}.` : "Explore premium courses with Genius Wings Company."}
+  />
+  <meta
+    name="twitter:image"
+    content={courseDetails?.image ? courseDetails.image : "http://genius-wings.com/images/Brand-Logo.png"}
+  />
+  <meta name="twitter:url" content={window.location.href} />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href={window.location.href} />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "${courseDetails?.name || "Course Details"}",
+        "description": "${courseDetails?.description || "Explore comprehensive course details offered by Genius Wings Company."}",
+        "provider": {
+          "@type": "Organization",
+          "name": "Genius Wings Company",
+          "url": "http://genius-wings.com"
+        },
+        "startDate": "${courseDetails?.TimeStart || ""}",
+        "instructor": {
+          "@type": "Person",
+          "name": "${courseDetails?.user?.name || ""}"
+        },
+        "image": "${courseDetails?.image || "http://genius-wings.com/images/Brand-Logo.png"}",
+        "url": "${window.location.href}"
+      }
+    `}
+  </script>
+</Helmet>
+
       <Toaster position="top-right" reverseOrder={false} />
 
       {isLoading ? (
@@ -133,7 +206,8 @@ const CourseDetails = () => {
   
             {/* Product Details */}
             <div className="w-full md:w-1/2 px-4">
-              <h2 className="text-3xl font-bold mb-2">Premium Wireless Headphones</h2>
+              <h2 className="text-3xl max-w-full break-words font-bold mb-2">{courseDetails ? courseDetails.name : ""}
+              </h2>
               <div className="mb-4">
                   <div className="flex gap-4 items-center">
                     <span className="text-primary font-bold">
@@ -151,9 +225,8 @@ const CourseDetails = () => {
                   </div>
                 </div>
              
-              <p className="text-gray-700 mb-6">
-                Experience premium sound quality and industry-leading noise cancellation with these wireless headphones.
-                Perfect for music lovers and frequent travelers.
+              <p className="text-gray-700  max-w-full break-words mb-6">
+              {courseDetails ? courseDetails.description : ""}
               </p>
   
               <div className="flex gap-1 items-center">

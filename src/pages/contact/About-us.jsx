@@ -11,6 +11,65 @@ const About_us = () => {
 
   return (
     <div className="flex flex-col justify-between min-h-screen">
+      <Helmet>
+  {/* Basic Meta Tags */}
+  <title>About Us - Genius Wings Company</title>
+  <meta
+    name="description"
+    content="Learn more about Genius Wings Company, a leading software development company specializing in web development, app development, business solutions, Photoshop services, and more. Discover our vision, mission, and commitment to delivering innovative solutions."
+  />
+  <meta
+    name="keywords"
+    content="about us, Genius Wings Company, software development, web development, app development, business solutions, Photoshop services, company mission, company vision"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="About Us - Genius Wings Company" />
+  <meta
+    property="og:description"
+    content="Discover the story behind Genius Wings Company, our mission, vision, and the innovative solutions we offer in web development, app development, software, and business services."
+  />
+  <meta
+    property="og:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta property="og:url" content="http://genius-wings.com/About-us" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us - Genius Wings Company" />
+  <meta
+    name="twitter:description"
+    content="Get to know Genius Wings Company, a leader in software development, web and app development, business solutions, and Photoshop services. Learn about our mission, values, and innovative approach."
+  />
+  <meta
+    name="twitter:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta name="twitter:url" content="http://genius-wings.com/About-us" />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href="http://genius-wings.com/About-us" />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us",
+        "description": "Learn about Genius Wings Company and how we provide innovative software, web development, app development, Photoshop services, and business solutions.",
+        "url": "http://genius-wings.com/About-us",
+        "image": "http://genius-wings.com/images/Brand-Logo.png"
+      }
+    `}
+  </script>
+</Helmet>
+
       <div className="pt-[100px]">
         <section className="w-full flex justify-center p-4 mx-auto py-10 ">
           {/* Title */}

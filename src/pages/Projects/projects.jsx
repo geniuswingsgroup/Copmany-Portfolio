@@ -3,6 +3,7 @@ import aa from "../../assets/images/about-us.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/layouts/footer";
 import Loader from "../Loader";
+import { Helmet } from "react-helmet-async";
 
 const Allprojects = () => {
   const [Projects, setProjects] = useState([]);
@@ -52,6 +53,65 @@ const Allprojects = () => {
   
   return (
     <div className="flex flex-col justify-between min-h-screen">
+      <Helmet>
+  {/* Basic Meta Tags */}
+  <title>Our Projects - Genius Wings Company</title>
+  <meta
+    name="description"
+    content="Discover the innovative projects by Genius Wings Company. From web development to business management solutions, explore our successful projects and see how we bring ideas to life."
+  />
+  <meta
+    name="keywords"
+    content="our projects, Genius Wings projects, web development projects, business management solutions, innovative projects, successful projects"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="Our Projects - Genius Wings Company" />
+  <meta
+    property="og:description"
+    content="Explore the successful and innovative projects carried out by Genius Wings Company. Learn about our web development, business solutions, and more."
+  />
+  <meta
+    property="og:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta property="og:url" content="http://genius-wings.com/Our-Projects" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Genius Wings Company" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Projects - Genius Wings Company" />
+  <meta
+    name="twitter:description"
+    content="Explore the portfolio of Genius Wings Company and learn about our innovative projects in web development and business management solutions."
+  />
+  <meta
+    name="twitter:image"
+    content="http://genius-wings.com/images/Brand-Logo.png"
+  />
+  <meta name="twitter:url" content="http://genius-wings.com/Our-Projects" />
+
+  {/* Canonical Tag */}
+  <link rel="canonical" href="http://genius-wings.com/Our-Projects" />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Our Projects",
+        "description": "Explore the innovative and successful projects delivered by Genius Wings Company, including web development, business management, and more.",
+        "url": "http://genius-wings.com/Our-Projects",
+        "image": "http://genius-wings.com/images/Brand-Logo.png"
+      }
+    `}
+  </script>
+</Helmet>
+
       {loading ? (
         <Loader />
       ) : (
@@ -85,7 +145,7 @@ const Allprojects = () => {
                       <div className="grid">
                         <h5 className="text-gray-900 text-lg font-[500]">{project.name}</h5>
       
-                        <div className="flex justify-between  gap-1">
+                        <div className="flex flex-col  gap-1">
                           <p className="font-medium text-gray-600 text-sm">Developer By</p>
                           <div className="flex flex-wrap gap-2 text-transparent bg-clip-text bg-primary">
                             {project.TeamWork.map((users, index) => {
