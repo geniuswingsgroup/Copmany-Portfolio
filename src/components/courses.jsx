@@ -57,7 +57,7 @@ const Courses = ({ data }) => {
                 />
                 <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500  group-hover:bg-gray-50">
                   <div className="flex items-center justify-between ">
-                    <h6 className="font-semibold text-base leading-7 line-clamp-2 text-black">
+                    <h6 className="font-semibold max-w-[80%] break-words text-base leading-7 line-clamp-2 text-black">
                       {course.name}
                     </h6>
                     <h6 className="font-semibold text-base leading-7 text-transparent bg-clip-text bg-primary text-right">
