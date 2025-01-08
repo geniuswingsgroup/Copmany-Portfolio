@@ -11,7 +11,6 @@ import Error404 from "../error404-page";
 const RegisterCourse = () => {
   const [loading, setLoading] = useState(true);
   const [register, setRegister] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -149,25 +148,29 @@ const RegisterCourse = () => {
               </table>
             </div>
 
-            {/* Pagination */}
-            <div className="flex justify-center items-center mt-6">
-              <button
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage(currentPage - 1)}
-                className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
-              >
-                Previous
-              </button>
-              <span className="mx-4">{currentPage}</span>
-              <button
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage(currentPage + 1)}
-                className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
-              >
-                Next
-              </button>
-            </div>
+  {/* Pagination */}
+<div className="flex justify-center items-center mt-6">
+  <button
+    disabled={currentPage === 1}
+    onClick={() => setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))}
+    className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
+  >
+    Previous
+  </button>
+  <span className="mx-4">{currentPage}</span>
+  <button
+    disabled={currentPage === totalPages}
+    onClick={() =>
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages))
+    }
+    className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
+  >
+    Next
+  </button>
+</div>
+
           </div>
+
         </>
       )}
     </div>

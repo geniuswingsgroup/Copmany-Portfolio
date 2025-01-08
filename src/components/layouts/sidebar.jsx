@@ -9,10 +9,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = React.useState(false);
@@ -32,24 +29,20 @@ export default function TemporaryDrawer() {
     { name: 'About us', path: '/about-us' },
     { name: 'Contact us', path: '/contact-us' },
     { name: 'Manage Contact', path: '/manage-contact' },
-
   ];
-  
+
   const Authroutes = [
     { name: 'Register', path: '/register' },
     { name: 'Login', path: '/login' },
     { name: 'Manage users', path: '/users' },
   ];
-  
-
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        {routes.map((route, index) => (
+        {routes.map((route) => (
           <ListItem key={route.name} disablePadding>
             <ListItemButton component={Link} to={route.path}>
-              {/* <ListItemIcon>{route.icon}</ListItemIcon> */}
               <ListItemText primary={route.name} />
             </ListItemButton>
           </ListItem>
@@ -57,7 +50,7 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-      {Authroutes.map((route, index) => (
+        {Authroutes.map((route) => (
           <ListItem key={route.name} disablePadding>
             <ListItemButton component={Link} to={route.path}>
               <ListItemText primary={route.name} />
@@ -75,9 +68,9 @@ export default function TemporaryDrawer() {
         <MenuIcon />
       </IconButton>
 
-      {/* Drawer component */}
-      <Drawer open={open} onClose={toggleDrawer(false)}>
-        <Box sx={{ width: 250 }}>{DrawerList}</Box>
+      {/* Drawer component with the anchor set to 'right' */}
+      <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+        {DrawerList}
       </Drawer>
     </div>
   );

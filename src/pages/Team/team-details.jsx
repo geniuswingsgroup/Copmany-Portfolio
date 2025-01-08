@@ -173,14 +173,7 @@ const TeamDetails = () => {
                           {details.job_title}
                         </dd>
                       </div>
-                      <div className="flex flex-col py-3">
-                        <dt className="mb-1 text-gray-800 font-[600] md:text-lg">
-                          Role
-                        </dt>
-                        <dd className="text-md font-[500]">
-                          {details.experience}
-                        </dd>
-                      </div>
+                
                     </dl>
                   </div>
 
