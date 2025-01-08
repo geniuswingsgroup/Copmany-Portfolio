@@ -116,7 +116,7 @@ const Allprojects = () => {
         <Loader />
       ) : (
         <div className="pt-[70px]">
-        <div className="flex justify-center w-full p-4 py-16 md:px-10 md:py-16 to-blue-100">
+        <div className=" justify-center w-full p-4 py-16 md:px-10 md:py-16 to-blue-100">
           <div className="mx-auto 2xl:max-w-[1800px] md:max-w-[1270px] sm:px-6 lg:px-8">
             <div className="mx-auto w-full mb-[100px] text-center">
               <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-primary">
@@ -134,7 +134,7 @@ const Allprojects = () => {
                 return (
                   <a key={project._id}
                     href={project.url ? project.url : null}
-                    className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[350px] p-4 hover:border-primary"
+                    className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl w-full p-4 hover:border-primary"
                   >
                     <div className="flex flex-col gap-5">
                       <img
@@ -143,7 +143,7 @@ const Allprojects = () => {
                         alt="Ghaith Adnan"
                       />
                       <div className="grid">
-                        <h5 className="text-gray-900 text-lg font-[500]">{project.name}</h5>
+                        <h5 className="text-gray-900 max-w-full break-words text-lg font-[500]">{project.name}</h5>
       
                         <div className="flex flex-col  gap-1">
                           <p className="font-medium text-gray-600 text-sm">Developer By</p>
