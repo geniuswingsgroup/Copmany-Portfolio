@@ -135,7 +135,7 @@ const All_features = () => {
                       {Features.map((data) => {
                         return (
                           <div key={data._id} className="swiper-slide">
-                          <di key={data._id}>
+                          <div key={data._id}>
                             <div
                               className="group bg-white flex justify-between border flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
                               style={{ minHeight: "400px", maxHeight: "400px" }}
@@ -160,7 +160,7 @@ const All_features = () => {
                                 />
                               </div>
                             </div>
-                          </di>
+                          </div>
                         </div>
                         );
                       })}
