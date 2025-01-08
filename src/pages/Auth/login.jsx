@@ -27,7 +27,7 @@ const navigate = useNavigate()
 
       // Save token in cookies
       Cookies.set("authToken", token, { expires: 7 }); // Expires in 7 days
-      navigate('/')
+      window.location.href = '/'; // Force a refresh
       toast.success("Logged in successfully!");
     } catch (error) {
       if (error.response) {
