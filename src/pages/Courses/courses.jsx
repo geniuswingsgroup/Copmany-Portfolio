@@ -288,7 +288,7 @@ const AllCourses = () => {
                   </div>
                   <div className="flex items-center justify-center max-w-full">
                     <img
-                      className="rounded-lg object-cover"
+                      className="rounded-lg object-fill"
                       style={{ height: "200px", width: "100%" }}
                       src={data.image}
                       alt={`${data.name} image`}

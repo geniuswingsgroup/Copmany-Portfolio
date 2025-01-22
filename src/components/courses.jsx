@@ -51,7 +51,7 @@ const Courses = ({ data }) => {
                 className="relative bg-cover group w-full rounded-3xl border border-[#313131] hover:border-primary duration-[0.7s]  bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
               >
                 <img
-                  className="rounded-2xl w-full object-cover"
+                  className="rounded-2xl w-full object-fill"
                   src={course.image}
                   alt="Jacket image"
                 />

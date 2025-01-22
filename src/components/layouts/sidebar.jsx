@@ -65,7 +65,7 @@ export default function TemporaryDrawer() {
     <div>
       {/* IconButton with MenuIcon to toggle the drawer */}
       <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-        <MenuIcon />
+        <MenuIcon style={{color:"#E4C24A"}} />
       </IconButton>
 
       {/* Drawer component with the anchor set to 'right' */}

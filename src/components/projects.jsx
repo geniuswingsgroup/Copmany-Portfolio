@@ -111,7 +111,7 @@ const Projects = ({ data }) => {
                       >
                         <div className="flex flex-col gap-5">
                           <img
-                            className="w-full rounded-[10px] object-cover max-h-[300px]"
+                            className="w-full rounded-[10px] object-fill max-h-[300px]"
                             src={project.image}
                             alt="Project"
                           />
