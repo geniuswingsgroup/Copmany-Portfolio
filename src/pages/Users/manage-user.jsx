@@ -211,13 +211,13 @@ useEffect(() => {
           {showModal && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
               <div className="bg-background_color mx-2 p-6 rounded-lg shadow-lg w-[500px]">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+              <h3 className="text-xl font-semibold text-text_color mb-4 text-center">
                   Update User
                 </h3>
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="name" className="block text-sm font-medium text-text_color">
                         Name
                       </label>
                       <input
@@ -230,7 +230,7 @@ useEffect(() => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="email" className="block text-sm font-medium text-text_color">
                         Email
                       </label>
                       <input
@@ -243,7 +243,7 @@ useEffect(() => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="phone" className="block text-sm font-medium text-text_color">
                         Phone
                       </label>
                       <input
@@ -256,7 +256,7 @@ useEffect(() => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="role" className="block text-sm font-medium text-text_color">
                         Role
                       </label>
                       <select
