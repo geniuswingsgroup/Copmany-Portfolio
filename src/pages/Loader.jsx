@@ -10,15 +10,15 @@ const Model = () => {
 
 const Loader = () => {
   return (
-    <div style={{  height: "100vh" }} className="bg-white z-50 h-screen flex justify-center items-center fixed left-0 top-0 w-full">
- <div className=" border-primary gradient-border border-0 border-t-4 
+    <div style={{  height: "100vh" }} className="bg-[#1E1E1E] z-50 h-screen flex justify-center items-center fixed left-0 top-0 w-full">
+ <div className=" border-hover gradient-border border-0 border-t-4 
   w-[150px]
   h-[150px]
   rounded-full
   flex justify-center items-center
   loadingone
   ">
-  <div className=" border-secondary border-0 border-b-4
+  <div className=" border-secondary border-0 border-primary border-b-4
    w-[100px]
    h-[100px]
    rounded-full

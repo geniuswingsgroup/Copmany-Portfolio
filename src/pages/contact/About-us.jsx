@@ -5,12 +5,13 @@ import Footer from "../../components/layouts/footer";
 import { Helmet } from "react-helmet-async";
 
 const About_us = () => {
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col justify-between bg-[#1e1e1e] min-h-screen">
       <Helmet>
   {/* Basic Meta Tags */}
   <title>About Us - Genius Wings Company</title>
@@ -75,11 +76,11 @@ const About_us = () => {
           {/* Title */}
           <div className="2xl:max-w-[1600px] md:max-w-[1270px]">
             <div className="mx-auto w-full mb-[100px] text-center">
-              <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
+              <h2 className="font-display   text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
                 About Us
               </h2>
               <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-                <p className="md:text-lg text-sm text-gray-700">
+                <p className="md:text-lg text-sm text-text_color">
                   Learn about our journey, our mission, and the values that
                   drive us to deliver innovative solutions
                 </p>
@@ -100,7 +101,7 @@ const About_us = () => {
                         GeniusWings Group
                       </p>
 
-                      <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
+                      <p className="block mt-2 font-medium text-sub_text ">
                         We create custom software solutions that drive growth,
                         enhance efficiency, and deliver results tailored to your
                         business needs.
@@ -113,7 +114,7 @@ const About_us = () => {
                       <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Innovative Solutions
                       </h3>
-                      <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
+                      <p className="block mt-2 font-medium   text-sub_text ">
                         We transform your ideas into innovative software
                         solutions that help your business thrive in a
                         competitive market.
@@ -126,7 +127,7 @@ const About_us = () => {
                       <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Expert Development Team
                       </h3>
-                      <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
+                      <p className="block mt-2 font-medium text-sub_text  ">
                         Our team of skilled professionals builds high-quality,
                         custom software tailored to meet your unique business
                         requirements.
@@ -139,7 +140,7 @@ const About_us = () => {
                       <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Client-Centered Approach
                       </h3>
-                      <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
+                      <p className="block mt-2 font-medium sub_text text-sub_text">
                         We put your needs first, developing software that
                         addresses your specific challenges and drives your
                         business success.
@@ -152,7 +153,7 @@ const About_us = () => {
                       <h3 className="text-transparent bg-clip-text bg-primary capitalize">
                         Commitment to Excellence
                       </h3>
-                      <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 ">
+                      <p className="block mt-2 font-medium text-sub_text ">
                         We are dedicated to delivering exceptional software
                         solutions with the highest standards of quality,
                         reliability, and efficiency.

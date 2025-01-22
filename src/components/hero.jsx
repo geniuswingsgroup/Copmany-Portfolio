@@ -2,14 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import AddIcCallOutlinedIcon from "@mui/icons-material/AddIcCallOutlined";
-import image from "../assets/images/undraw_progressive-app_9517 (4).svg";
+import image from "../assets/images/laptop-maintenance-3d-icon-download-in-png-blend-fbx-gltf-file-formats--service-repair-system-setting-settings-computer-pack-science-technology-icons-7588366.webp";
 import BrandCarousel from "./brands";
 
 export default () => {
   return (
-    <div className="flex flex-col pt-[80px] min-h-screen ">
+    <div className="flex flex-col pt-[80px] min-h-screen bg-[#1E1E1E]">
       {/* Hero Section */}
-      
+      <svg
+    className="absolute inset-0 -z-1 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    aria-hidden="true">
+    <defs>
+      <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="100%" y="-1"
+        patternUnits="userSpaceOnUse">
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+    </defs>
+  
+    <rect width="100%" height="100%" strokeWidth="0" fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"></rect>
+  </svg>
       <div className="flex flex-1 items-center justify-center">
         <div className="relative mx-auto">
           <div className="absolute inset-0 blur-xl h-[580px]"></div>
@@ -17,13 +28,13 @@ export default () => {
   <div className="absolute inset-0 blur-xl h-[580px]"></div>
   <div className="relative">
     <section>
-      <div className=" mx-auto px-4 py-28 2xl:gap-[200px] text-gray-600 overflow-hidden md:px-8 md:flex">
-        <div className="flex-none space-y-5 2xl:max-w-5xl max-w-3xl">
+      <div className=" mx-auto px-4 py-28 2xl:gap-[350px] text-text_color overflow-hidden md:px-8 md:flex">
+        <div className="flex-none space-y-5 2xl:max-w-5xl 2xl:mt-[30px] max-w-3xl">
           <Link
             to={"/Our-features"}
-            className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white"
+            className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border border-[#313131] text-sm font-medium duration-150 "
           >
-            <span className="inline-block rounded-full px-3 py-1 bg-primary text-white">
+            <span className="inline-block rounded-full px-3 py-1 bg-primary text-text_color">
               GeniusWings
             </span>
             <p className="flex items-center">
@@ -42,7 +53,7 @@ export default () => {
               </svg>
             </p>
           </Link>
-          <h1 className="mx-auto max-w-8xl font-display text-[30px]  lg:text-5xl md:text-5xl  font-[600] tracking-tight text-slate-900">
+          <h1 className="mx-auto max-w-8xl font-display text-[30px]  lg:text-5xl md:text-5xl  font-[600] tracking-tight text-text_color">
             <span className="inline-block">
               Empowering Innovation Building
               <span className="text-transparent bg-clip-text 2xl:block bg-primary"> the Future</span>{" "}
@@ -50,7 +61,7 @@ export default () => {
             </span>
           </h1>
 
-          <p className=" mt-9 max-w-2xl text-sm tracking-tight sm:text-lg text-slate-700 sm:mt-6 lg:text-lg">
+          <p className=" mt-9 max-w-2xl text-sm tracking-tight sm:text-lg text-sub_text sm:mt-6 lg:text-lg">
             Delivering cutting-edge software solutions to drive your
             business forward. Transform your ideas into reality with our
             expert team of developers and designers.{" "}
@@ -69,10 +80,10 @@ export default () => {
             <div className="relative flex flex-1 flex-col items-stretch sm:flex-none">
               <Link to={"/About-us"}>
                 <button
-                  className="group inline-flex w-full ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-primary focus-visible:ring-slate-300 animate-fade-in-right"
+                  className="group inline-flex w-full ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-[#313131]  hover:text-slate-900 hover:ring-[#414040]  focus-visible:outline-primary  animate-fade-in-right"
                   type="button"
                 >
-                  <span className="mx-3 flex gap-2 items-center font-semibold text-[14px]">
+                  <span className="mx-3 flex gap-2 items-center font-semibold text-[14px] text-text_color">
                     <ReadMoreIcon />
                     About Us
                   </span>
@@ -81,10 +92,10 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 hidden lg:block">
+        <div className="flex-1 mt-[-50px]  hidden lg:block">
           <img
             src={image}
-            className="max-w-xl 2xl:min-w-[700px]"
+            className="max-w-xl 2xl:min-w-[550px]"
             alt="Progressive App Illustration"
           />
         </div>

@@ -50,18 +50,18 @@ const navigate = useNavigate()
   };
 
   return (
-    <div className="flex items-center pt-[80px] mx-4 justify-center min-h-screen ">
-      <div className="w-full max-w-md p-8 bg-white  border rounded-lg shadow-md">
-        <h2 className="mb-6 text-2xl font-semibold text-center text-gray-700">
+    <div className="flex items-center bg-background_color pt-[80px]  justify-center min-h-screen ">
+      <div className="w-full mx-4 max-w-md p-8  border rounded-lg shadow-md">
+        <h2 className="mb-6 text-2xl font-semibold text-center text-text_color">
           Login
         </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="">
           {/* Email Field */}
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="email"
               id="floating_email"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
               value={email}
@@ -80,15 +80,15 @@ const navigate = useNavigate()
             <input
               type={showPassword ? "text" : "password"}
               id="floating_password"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label
-              htmlFor="floating_password"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primarypeer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+           <label
+              htmlFor="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Password
             </label>

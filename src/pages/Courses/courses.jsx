@@ -136,7 +136,7 @@ const AllCourses = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="min-h-screen flex flex-col justify-between">
+        <div className="min-h-screen bg-background_color md:pt-5  pt-1  flex flex-col justify-between">
           <div className="pt-[70px] mx-auto w-full main-freeLancer-container">
             <div className="w-full md:h-[250px] flex  flex-col justify-center details-cover h-[180px] ">
               <div className="flex justify-center w-full  items-center">
@@ -200,9 +200,9 @@ const AllCourses = () => {
 
             <div className="flex w-full md:absolute justify-center z-10   w-ful ">
               {isDropdownOpen && (
-                <div className=" freelance-filter mx-[16px]  border w-[600px]  max-h-[160px] overflow-hidden  md:mt-[-50px] mt-[10px]   rounded-xl bg-white">
+                <div className=" freelance-filter mx-[16px]  border border-[#2c2c2c]   bg-[#242424] w-[600px]  max-h-[160px] overflow-hidden  md:mt-[-50px] mt-[14px]   rounded-xl ">
                   {/* Add your dropdown content here */}
-                  <div className=" flex  flex-end">
+                  <div className=" flex text-text_color  flex-end">
                     <div className="flex w-full flex-col  mx-[20px]">
                       {" "}
                       <div className="flex min-w-full my-[20px]    max-h-[100px] overflow-auto justify-center  gap-[30px]">
@@ -217,7 +217,7 @@ const AllCourses = () => {
                               form
                               <input
                                 value={gteFilter}
-                                className="block px-[20px] h-[40px] w-full text-sm text-gray-900 border border-gray-300 rounded-lg  bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                className="block px-[20px] h-[40px] w-full text-sm  focus:border-[#494949] focus:ring-0 text-text_color border border-[#494949] rounded-lg  bg-[#333333] dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 onChange={(e) => {
                                   setGteFilter(e.target.value);
                                 }}
@@ -228,7 +228,7 @@ const AllCourses = () => {
                               to
                               <input
                                 value={lteFilter}
-                                className="block px-[20px] h-[40px] w-full text-sm text-gray-900 border border-gray-300 rounded-lg  bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                className="block px-[20px] h-[40px] w-full text-sm  focus:border-[#494949] focus:ring-0 text-text_color border border-[#494949] rounded-lg  bg-[#333333] dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 onChange={(e) => {
                                   setLteFilter(e.target.value);
                                 }}
@@ -264,19 +264,19 @@ const AllCourses = () => {
             <div key={data._id} className="swiper-slide">
               <Link to={`/Course-detail/${data._id}`} key={data._id}>
                 <div
-                  className="group bg-white flex justify-between border flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
+                  className="  border-[#2c2c2c]   bg-[#242424] flex justify-between border flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
                   style={{ minHeight: "400px", maxHeight: "400px" }}
                 >
                   <div className="flex-grow max-w-full">
                     <div className="flex justify-between w-full items-center mb-3 gap-2 transition-all duration-500">
-                      <span className="text-gray-900 font-semibold break-words max-w-[90%]">
+                      <span className="text-primary font-semibold break-words max-w-[90%]">
                         {data.name}
                       </span>
-                      <span className="text-primary font-semibold">
+                      {/* <span className="text-primary font-semibold">
                         {data.price}
-                      </span>
+                      </span> */}
                     </div>
-                    <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-gray-600 line-clamp-3 break-words duration-500 mb-4">
+                    <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-sub_text line-clamp-3 break-words duration-500 mb-4">
                       {data.description}
                     </p>
                   </div>

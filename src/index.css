@@ -48,8 +48,7 @@ body {
 .details-cover {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to top left, #7c3aed, #2563eb);
-}
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='250' preserveAspectRatio='none' viewBox='0 0 1440 250'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1006%26quot%3b)' fill='none'%3e%3crect width='1440' height='250' x='0' y='0' fill='rgba(200%2c 155%2c 60%2c 1)'%3e%3c/rect%3e%3cpath d='M8 250L258 0L538.5 0L288.5 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1007%26quot%3b)'%3e%3c/path%3e%3cpath d='M270.6 250L520.6 0L825.1 0L575.1 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1007%26quot%3b)'%3e%3c/path%3e%3cpath d='M488.20000000000005 250L738.2 0L945.2 0L695.2 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1007%26quot%3b)'%3e%3c/path%3e%3cpath d='M758.8000000000001 250L1008.8000000000001 0L1365.8000000000002 0L1115.8000000000002 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1007%26quot%3b)'%3e%3c/path%3e%3cpath d='M1397 250L1147 0L1084 0L1334 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1008%26quot%3b)'%3e%3c/path%3e%3cpath d='M1162.4 250L912.4000000000001 0L864.4000000000001 0L1114.4 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1008%26quot%3b)'%3e%3c/path%3e%3cpath d='M934.8 250L684.8 0L336.79999999999995 0L586.8 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1008%26quot%3b)'%3e%3c/path%3e%3cpath d='M712.1999999999999 250L462.19999999999993 0L406.69999999999993 0L656.6999999999999 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1008%26quot%3b)'%3e%3c/path%3e%3cpath d='M1216.4913657826005 250L1440 26.491365782600468L1440 250z' fill='url(%26quot%3b%23SvgjsLinearGradient1007%26quot%3b)'%3e%3c/path%3e%3cpath d='M0 250L223.50863421739953 250L 0 26.491365782600468z' fill='url(%26quot%3b%23SvgjsLinearGradient1008%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1006'%3e%3crect width='1440' height='250' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1007'%3e%3cstop stop-color='rgba(228%2c 194%2c 74%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(228%2c 194%2c 74%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1008'%3e%3cstop stop-color='rgba(228%2c 194%2c 74%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(228%2c 194%2c 74%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");}
 .image-container {
   position: relative;
   width: 170px;
@@ -242,4 +241,36 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   font-size: 48px; /* Adjust size */
+}
+
+.modal-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal-overlay.open {
+  opacity: 1;
+}
+.modal-content {
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.modal-content.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #2e2e2e; /* Scrollbar color */
+}
+
+/* Optional: Style the scrollbar track background */
+::-webkit-scrollbar-track {
+  background-color: #1e1e1e; /* Light gray background */
 }

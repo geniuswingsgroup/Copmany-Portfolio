@@ -183,15 +183,15 @@ const ManageCourses = () => {
     return <Error404 />;
   }
   return (
-    <div className="min-h-screen flex pt-[140px] items-center justify-center">
+    <div className="min-h-screen bg-background_color flex pt-[140px] items-center justify-center">
       <Toaster position="top-right" reverseOrder={false} />
       {loading ? (
         <Loader />
       ) : (
         <>
-          <div className="bg-white p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
+          <div className=" p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
             <div className="flex justify-between flex-wrap gap-4 items-center mb-6">
-              <h2 className="text-3xl font-semibold text-gray-800">
+              <h2 className="text-3xl font-semibold text-text_color">
                 Manage Courses
               </h2>
               <button
@@ -215,9 +215,9 @@ const ManageCourses = () => {
 
             {/* Courses Table */}
             <div className="overflow-x-auto shadow-md rounded-lg">
-              <table className="min-w-full table-auto bg-white border-separate border-spacing-0">
-                <thead className="bg-gray-200">
-                  <tr>
+            <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+            <thead className="bg-[#302f2f] text-text_color">
+            <tr>
                     <th className="py-2 px-4 text-left">Course Name</th>
                     <th className="py-2 px-4 text-left">Image</th>
                     <th className="py-2 px-4 text-left">Description</th>
@@ -227,8 +227,8 @@ const ManageCourses = () => {
                 </thead>
                 <tbody>
                   {courses.map((course) => (
-                    <tr key={course._id} className="border-b hover:bg-gray-50">
-                      <td className="py-2 px-4 max-w-[200px] break-words">
+                    <tr key={course._id} className="border-b text-text_color ">
+                      <td className="py-2 px-4 max-w-[200px]  break-words">
                         {course.name}
                       </td>
                       <td className="py-2 px-4 max-w-[200px] break-words">
@@ -269,16 +269,16 @@ const ManageCourses = () => {
               <button
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}
-                className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
-              >
+                className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+                >
                 Previous
               </button>
-              <span className="mx-4">{currentPage}</span>
+              <span className="mx-4 text-text_color">{currentPage}</span>
               <button
                 disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage(currentPage + 1)}
-                className="px-4 py-2 bg-gray-300 rounded-lg disabled:bg-gray-500"
-              >
+                className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+                >
                 Next
               </button>
             </div>
@@ -288,8 +288,8 @@ const ManageCourses = () => {
           {/* Create/Update Modal */}
           {(showCreateModal || showUpdateModal) && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="bg-white mx-2 p-6 rounded-lg shadow-lg w-[500px]">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+              <div className="bg-background_color mx-2 p-6 rounded-lg shadow-lg w-[500px]">
+                <h3 className="text-xl font-semibold text-text_color mb-4 text-center">
                   {showUpdateModal ? "Update Course" : "Create New Course"}
                 </h3>
                 <form onSubmit={handleSubmit}>
@@ -299,7 +299,7 @@ const ManageCourses = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-text_color"
                       >
                         Course Name
                       </label>
@@ -309,7 +309,7 @@ const ManageCourses = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                        className="w-full p-2 border border-gray-300 rounded-md"
+                        className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
                       />
                     </div>
 
@@ -317,7 +317,7 @@ const ManageCourses = () => {
                     <div>
                       <label
                         htmlFor="image"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-text_color"
                       >
                         Course Image
                       </label>
@@ -325,7 +325,7 @@ const ManageCourses = () => {
                         type="file"
                         id="image"
                         onChange={(e) => setImage(e.target.files[0])}
-                        className="w-full p-2 border border-gray-300 rounded-md"
+                        className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                       />
                     </div>
 
@@ -333,7 +333,7 @@ const ManageCourses = () => {
                     <div>
                       <label
                         htmlFor="price"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-text_color"
                       >
                         Price
                       </label>
@@ -343,7 +343,7 @@ const ManageCourses = () => {
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
                         required
-                        className="w-full p-2 border border-gray-300 rounded-md"
+                        className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                       />
                     </div>
 
@@ -351,17 +351,16 @@ const ManageCourses = () => {
                     <div>
                       <label
                         htmlFor="userId"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-text_color"
                       >
-                        Select User
-                      </label>
+Select Lecturer                      </label>
                       <select
                         id="userId"
                         value={userId}
                         onChange={(e) => setUserId(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded-md"
+                        className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                       >
-                        <option value="">Select User</option>
+                        <option value="">Select Lecturer</option>
                         {users.map((user) => (
                           <option key={user._id} value={user._id}>
                             {user.name}
@@ -375,7 +374,7 @@ const ManageCourses = () => {
                       <div>
                         <label
                           htmlFor="available"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-text_color"
                         >
                           Available
                         </label>
@@ -383,7 +382,7 @@ const ManageCourses = () => {
                           id="available"
                           value={Avalable}
                           onChange={(e) => setAvalable(e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded-md"
+                          className="w-full p-2 border border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                         >
                           <option value="">Available or Not</option>
                           <option value="true">Yes</option>
@@ -396,7 +395,7 @@ const ManageCourses = () => {
                       <div className="">
                         <label
                           htmlFor="TimeStart"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-text_color"
                         >
                           Time Start
                         </label>
@@ -405,7 +404,7 @@ const ManageCourses = () => {
                           id="TimeStart"
                           value={TimeStart}
                           onChange={(e) => setTimeStart(e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded-md"
+                          className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                         />
                       </div>
                     )}
@@ -415,7 +414,7 @@ const ManageCourses = () => {
                     <div className="mb-3">
                       <label
                         htmlFor="TimeStart"
-                        className="block  text-sm font-medium text-gray-700"
+                        className="block  text-sm font-medium text-text_color"
                       >
                         Time Start
                       </label>
@@ -424,7 +423,7 @@ const ManageCourses = () => {
                         id="TimeStart"
                         value={TimeStart}
                         onChange={(e) => setTimeStart(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded-md"
+                        className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                       />
                     </div>
                   ) : null}
@@ -433,7 +432,7 @@ const ManageCourses = () => {
                   <div className="mb-4">
                     <label
                       htmlFor="description"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Description
                     </label>
@@ -443,7 +442,7 @@ const ManageCourses = () => {
                       onChange={(e) => setDescription(e.target.value)}
                       required
                       rows="4"
-                      className="w-full p-2 border border-gray-300 rounded-md"
+                      className="w-full p-2 border  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded-md"
                     />
                   </div>
 

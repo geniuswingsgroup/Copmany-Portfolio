@@ -51,7 +51,7 @@ const All_features = () => {
     }
   };
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col bg-background_color justify-between min-h-screen">
    <Helmet>
   {/* Basic Meta Tags */}
   <title>Our Features - Genius Wings Company</title>
@@ -124,7 +124,7 @@ const All_features = () => {
                   Our Key Features
                 </h2>
                 <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-                  <p className="md:text-lg text-sm text-gray-700">
+                  <p className="md:text-lg text-sm text-text_color">
                     Explore the innovative solutions and capabilities that define our excellence
                   </p>
                 </div>
@@ -137,7 +137,7 @@ const All_features = () => {
                           <div key={data._id} className="swiper-slide">
                           <div key={data._id}>
                             <div
-                              className="group bg-white flex justify-between border flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
+                              className="group flex justify-between border border-[#2c2c2c]   bg-[#242424]  flex-col rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-primary hover:shadow-md"
                               style={{ minHeight: "400px", maxHeight: "400px" }}
                             >
                               <div className="flex-grow max-w-full">
@@ -147,7 +147,7 @@ const All_features = () => {
                                     {data.Title}
                                   </span>
                                 </div>
-                                <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-gray-600 line-clamp-3 break-words duration-500 mb-4">
+                                <p className="text-[13px] overflow-hidden sm:min-h-[70px] min-h-[60px] sm:text-[15px] text-text_color line-clamp-3 break-words duration-500 mb-4">
                                   {data.description}
                                 </p>
                               </div>
@@ -174,24 +174,24 @@ const All_features = () => {
 
               {total_data > 12 && Features.length > 0 ? (
                 <div className="flex justify-center mt-8">
-                  <button
-                    onClick={() => handlePageChange(pagination.currentPage - 1)}
-                    disabled={pagination.currentPage === 1}
-                    className="px-4 py-2 mx-2 border rounded-md disabled:opacity-50 bg-white hover:bg-primary hover:text-white"
+                <button
+                  onClick={() => handlePageChange(pagination.currentPage - 1)}
+                  disabled={pagination.currentPage === 1}
+                  className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
                   >
-                    Previous
-                  </button>
-                  <span className="flex items-center justify-center text-lg mx-2">
-                    Page {pagination.currentPage} of {pagination.numberOfPages}
-                  </span>
-                  <button
-                    onClick={() => handlePageChange(pagination.currentPage + 1)}
-                    disabled={pagination.currentPage === pagination.numberOfPages}
-                    className="px-4 py-2 mx-2 border rounded-md disabled:opacity-50 bg-white hover:bg-primary hover:text-white"
+                  Previous
+                </button>
+                <span className="flex  text-text_color items-center justify-center text-lg mx-2">
+                Page {pagination.currentPage} of {pagination.numberOfPages}
+                </span>
+                <button
+                  onClick={() => handlePageChange(pagination.currentPage + 1)}
+                  disabled={pagination.currentPage === pagination.numberOfPages}
+                  className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
                   >
-                    Next
-                  </button>
-                </div>
+                  Next
+                </button>
+              </div>
               ) : null}
             </div>
           </div>

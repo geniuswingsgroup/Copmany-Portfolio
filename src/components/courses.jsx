@@ -10,7 +10,7 @@ const Courses = ({ data }) => {
       const is1280to1024 = window.matchMedia("(min-width: 1024px) and (max-width: 1280px)").matches;
       const isUnder568 = window.matchMedia("(max-width: 640px)").matches;
       
-      setItemsToShow(is2xl ? 10 : is1280to1024 ? 9 : isUnder568 ? 4 : 8);
+      setItemsToShow(is2xl ? 5 : is1280to1024 ? 3 : isUnder568 ? 2 : 4);
     };
     
     // Set the initial value
@@ -27,14 +27,14 @@ const Courses = ({ data }) => {
 
   return (
     <>
-      <div className="flex justify-center w-full p-4 py-16 md:px-10 md:py-16 bg-gray-50 to-blue-100">
+      <div className="flex justify-center w-full p-4 pt-[70px] md:px-10  bg-[#1E1E1E]">
         <div className="mx-auto 2xl:max-w-[1600px] md:max-w-[1270px]">
           <div className="mx-auto w-full mb-[100px] text-center">
             <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
               Courses
             </h2>
             <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-              <p className="md:text-lg text-sm text-gray-700">
+              <p className="md:text-lg text-sm text-sub_text">
                 Gain valuable skills and knowledge through our comprehensive and
                 engaging learning programs.
               </p>
@@ -48,21 +48,21 @@ const Courses = ({ data }) => {
               <Link
                 key={course._id}
                 to={`Course-detail/${course._id}`}
-                className="relative bg-cover group w-full rounded-3xl border border-white bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
+                className="relative bg-cover group w-full rounded-3xl border border-[#313131] hover:border-primary duration-[0.7s]  bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
               >
                 <img
                   className="rounded-2xl w-full object-cover"
                   src={course.image}
                   alt="Jacket image"
                 />
-                <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500  group-hover:bg-gray-50">
+                <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-[#2e2d2d] w-[calc(100%-24px)] border border-[#4b4a4a] rounded-xl shadow-sm shadow-transparent transition-all duration-500  group-hover:bg-bg-[#313131]">
                   <div className="flex items-center justify-between ">
-                    <h6 className="font-semibold max-w-[80%] break-words text-base leading-7 line-clamp-2 text-black">
+                    <h6 className="font-semibold max-w-[80%] break-words text-base leading-7 line-clamp-2 text-text_color">
                       {course.name}
                     </h6>
-                    <h6 className="font-semibold text-base leading-7 text-transparent bg-clip-text bg-primary text-right">
+                    {/* <h6 className="font-semibold text-base leading-7 text-transparent bg-clip-text bg-primary text-right">
                       {course.price}
-                    </h6>
+                    </h6> */}
                   </div>
             <div className="">
 
@@ -84,7 +84,7 @@ const Courses = ({ data }) => {
           <Link
             to={"/courses"}
             dir="rtl"
-            className="mt-[20px] flex gap-1 items-center hover:text-primary"
+            className="mt-[20px] text-sub_text flex gap-1 items-center hover:text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

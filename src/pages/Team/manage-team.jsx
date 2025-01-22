@@ -23,8 +23,8 @@ const ManageOurTeam = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [showModal, setShowModal] = useState(false); // Add this line
-  const [job_title, setJob_title] = useState(false); // Add this line
-  const [experience, setExperience] = useState(false); // Add this line
+  const [job_title, setJob_title] = useState(); // Add this line
+  const [experience, setExperience] = useState(); // Add this line
 
   const token = Cookies.get("authToken");
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -198,16 +198,16 @@ const dispatch = useDispatch()
   
 
   return (
-    <div className="min-h-screen flex pt-[140px] items-center justify-center">
+    <div className="min-h-screen flex pt-[140px] items-center bg-background_color justify-center">
       <Toaster position="top-right" reverseOrder={false} />
 
       {
         loading?
         <Loader/>
         :
-        <div className="bg-white p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
+        <div className=" p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
         <div className="flex justify-between flex-wrap gap-4 items-center mb-6">
-          <h2 className="text-3xl font-semibold text-gray-800">
+          <h2 className="text-3xl font-semibold text-text_color">
             Manage Team Members
           </h2>
           <button
@@ -221,8 +221,8 @@ const dispatch = useDispatch()
 
         {/* Team Members Table */}
           <div className="overflow-x-auto shadow-md rounded-lg">
-            <table className="min-w-full table-auto bg-white border-separate border-spacing-0">
-              <thead className="bg-gray-200">
+            <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+              <thead className="bg-[#302f2f] text-text_color">
                 <tr>
                   <th className="py-2 px-4 text-left">Name</th>
                   <th className="py-2 px-4 text-center">Image</th>
@@ -233,7 +233,7 @@ const dispatch = useDispatch()
               </thead>
               <tbody>
                 {teamMembers.map((member) => (
-                  <tr key={member._id} className="border-b hover:bg-gray-50">
+                  <tr key={member._id} className="border-b text-text_color">
                     <td className="py-2 px-4 max-w-[200px] break-words">
                       {member.name}
                     </td>
@@ -245,7 +245,7 @@ const dispatch = useDispatch()
                       />
                     </td>
                     <td className="py-2 px-4 max-w-[200px] break-words">
-                      {member.PartInTeam}
+                      {member.job_title}
                     </td>
 
                     <td className="py-2 px-4 max-w-[200px] break-words">
@@ -294,8 +294,8 @@ const dispatch = useDispatch()
         {/* Modal for creating or updating a team member */}
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white mx-2 p-6 rounded-lg shadow-lg w-[500px]">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+            <div className="bg-[#1e1e1e] mx-2 p-6 rounded-lg shadow-lg w-[500px]">
+              <h3 className="text-xl font-semibold text-text_color mb-4 text-center">
                 {modalType === "create"
                   ? "Create Team Member"
                   : "Update Team Member"}
@@ -307,7 +307,7 @@ const dispatch = useDispatch()
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Name
                     </label>
@@ -317,15 +317,15 @@ const dispatch = useDispatch()
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      />
                   </div>
 
                   {/* jobtitle */}
                   <div>
                     <label
                       htmlFor="partInTeam"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       PartInTeam
                     </label>
@@ -334,15 +334,15 @@ const dispatch = useDispatch()
                       value={job_title}
                       onChange={(e) => setJob_title(e.target.value)}
                       required
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      />
                   </div>
 
                   {/* Image */}
                   <div>
                     <label
                       htmlFor="image"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Image
                     </label>
@@ -350,15 +350,15 @@ const dispatch = useDispatch()
                       type="file"
                       id="image"
                       onChange={(e) => setImage(e.target.files[0])}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      />
                   </div>
 
                   {/* User */}
                   <div>
                     <label
                       htmlFor="user"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       User
                     </label>
@@ -366,8 +366,8 @@ const dispatch = useDispatch()
                       id="user"
                       // value={userId}
                       onChange={(e) => setUserId(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    >
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      >
                       <option value="">Select User</option>
                       {users.map((user) => (
                         <option key={user._id} value={user._id}>
@@ -380,7 +380,7 @@ const dispatch = useDispatch()
                 <div className="mb-3">
                     <label
                       htmlFor="partInTeam"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Experience
                     </label>
@@ -390,15 +390,15 @@ const dispatch = useDispatch()
                       value={experience}
                       onChange={(e) => setExperience(e.target.value)}
                       required
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      />
                   </div>
                 {/* Full-Width Description */}
                 <div className="mb-4">
                   <label
                     htmlFor="description"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                    className="block text-sm font-medium text-text_color"
+                    >
                     Description
                   </label>
                   <textarea
@@ -407,8 +407,8 @@ const dispatch = useDispatch()
                     onChange={(e) => setDescription(e.target.value)}
                     required
                     rows="4"
-                    className="w-full p-2 border border-gray-300 rounded-md"
-                  />
+                    className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                    />
                 </div>
 
                 {/* Action Buttons */}

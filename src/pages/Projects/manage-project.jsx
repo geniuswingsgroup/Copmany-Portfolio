@@ -152,7 +152,7 @@ const deleteProject = async (id) => {
   }
   
   return (
-    <div className="container pt-[120px] mx-auto p-4">
+    <div className="container text-text_color bg-background_color min-w-full min-h-screen  pt-[120px]  p-4">
       <h1 className="text-2xl font-bold mb-4">Project Management</h1>
       <Toaster position="top-right" reverseOrder={false} />
 
@@ -169,7 +169,7 @@ const deleteProject = async (id) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Project Name"
-        className="border p-2 w-full rounded"
+        className="border p-2 border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  w-full rounded"
         required
       />
     </div>
@@ -180,7 +180,7 @@ const deleteProject = async (id) => {
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder="Project URL"
-        className="border p-2 w-full rounded"
+        className="border p-2 border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  w-full rounded"
         required
       />
     </div>
@@ -189,7 +189,7 @@ const deleteProject = async (id) => {
       <input
         type="file"
         onChange={(e) => setImage(e.target.files[0])}
-        className="border p-2 w-full rounded"
+        className="border p-2 w-full border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  rounded"
         required={!editId}
       />
     </div>
@@ -200,7 +200,7 @@ const deleteProject = async (id) => {
       multiple
       value={userId}
       onChange={(e) => setUserId([...e.target.selectedOptions].map(option => option.value))}
-      className="border p-2 w-full rounded"
+      className="border p-2 border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  w-full rounded"
     >
       <option value="">Select User</option>
       {users.map((user) => (
@@ -231,20 +231,20 @@ const deleteProject = async (id) => {
 
 
           <div className="overflow-x-auto">
-            <table className="table-auto w-full border-collapse border border-gray-200">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border border-gray-300 p-2">Name</th>
-                  <th className="border border-gray-300 p-2">Image</th>
-                  <th className="border border-gray-300 p-2">URL</th>
-                  <th className="border border-gray-300 p-2">Actions</th>
+          <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+          <thead className="bg-[#302f2f] text-text_color">
+                <tr className="">
+                  <th className="  p-2">Name</th>
+                  <th className="  p-2">Image</th>
+                  <th className=" b p-2">URL</th>
+                  <th className="  p-2">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {projects.map((project) => (
-                  <tr key={project._id} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-2">{project.name}</td>
-                    <td className="border border-gray-300 p-2">
+                  <tr key={project._id} className="">
+                    <td className=" p-2">{project.name}</td>
+                    <td className=" p-2">
                       {project.image && (
                         <img
                           src={project.image}
@@ -253,7 +253,7 @@ const deleteProject = async (id) => {
                         />
                       )}
                     </td>
-                    <td className="border border-gray-300 p-2">
+                    <td className=" p-2">
                       <a
                         href={project.url}
                         target="_blank"
@@ -263,7 +263,7 @@ const deleteProject = async (id) => {
                         {project.url}
                       </a>
                     </td>
-                    <td className="border border-gray-300 p-2 flex space-x-2">
+                    <td className="flex justify-center items-center p-2 h-full space-x-2">
                       <button
                         onClick={() => {
                           setEditId(project._id);
@@ -288,19 +288,8 @@ const deleteProject = async (id) => {
             </table>
           </div>
 
-          <div className="flex justify-center mt-4 items-center">
-  <button
-    onClick={() =>
-      setPagination((prev) => ({
-        ...prev,
-        currentPage: 1,
-      }))
-    }
-    disabled={pagination.currentPage <= 1}
-    className="px-4 py-2 mx-1 bg-gray-300 rounded hover:bg-gray-400"
-  >
-    First
-  </button>
+          <div className="flex justify-center  mt-4 items-center">
+
   <button
     onClick={() =>
       setPagination((prev) => ({
@@ -309,8 +298,8 @@ const deleteProject = async (id) => {
       }))
     }
     disabled={pagination.currentPage <= 1}
-    className="px-4 py-2 mx-1 bg-gray-300 rounded hover:bg-gray-400"
-  >
+    className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+    >
     Previous
   </button>
   <span className="mx-2 text-lg">
@@ -324,22 +313,11 @@ const deleteProject = async (id) => {
       }))
     }
     disabled={pagination.currentPage >= pagination.numberOfPages}
-    className="px-4 py-2 mx-1 bg-gray-300 rounded hover:bg-gray-400"
-  >
+    className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+    >
     Next
   </button>
-  <button
-    onClick={() =>
-      setPagination((prev) => ({
-        ...prev,
-        currentPage: pagination.numberOfPages,
-      }))
-    }
-    disabled={pagination.currentPage >= pagination.numberOfPages}
-    className="px-4 py-2 mx-1 bg-gray-300 rounded hover:bg-gray-400"
-  >
-    Last
-  </button>
+
 </div>
 
         </>

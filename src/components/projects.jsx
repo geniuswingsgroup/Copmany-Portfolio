@@ -9,28 +9,27 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 const Projects = ({ data }) => {
-
-
-  
   return (
     <>
-      <section className="py-24 p-4 ">
+      <section className="pt-[120px] p-4 bg-[#1e1e1e]">
         <div className="mx-auto  2xl:max-w-[1600px] md:max-w-[1270px]  ">
           <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
             <div className="w-full lg:w-2/5">
               <span className="text-sm text-transparent bg-clip-text bg-primary font-[500]  block">
                 Genius Wings
               </span>
-              <h2 className="text-4xl font-[500] text-gray-900 leading-[3.25rem] lg:mb-3 mb-8">
+              <h2 className="text-4xl font-[500] text-text_color leading-[3.25rem] lg:mb-3 mb-8">
                 Our Work{" "}
                 <span className="text-transparent bg-clip-text bg-primary">
                   Portfolio
                 </span>
               </h2>
-              <p className="text-gray-500 mb-7 lg:flex hidden text-base font-normal leading-relaxed lg:text-start ">
-                      We specialize in delivering custom software solutions, innovative apps, and seamless web designs. Our portfolio highlights our expertise in creating impactful, user-focused solutions that help businesses thrive in the digital landscape.
-
-</p>
+              <p className="text-sub_text mb-7 lg:flex hidden text-base font-normal leading-relaxed lg:text-start ">
+                We specialize in delivering custom software solutions,
+                innovative apps, and seamless web designs. Our portfolio
+                highlights our expertise in creating impactful, user-focused
+                solutions that help businesses thrive in the digital landscape.
+              </p>
               <div className="flex items-center justify-center lg:justify-start ">
                 <button
                   id="slider-button-left"
@@ -101,44 +100,60 @@ const Projects = ({ data }) => {
                 }}
                 modules={[Autoplay, Navigation, Pagination]} // Add modules here
               >
-        {data.map((project) => {
-  return (
-    <SwiperSlide key={`${project._id}-${project.name}`}> {/* Combine _id with name for uniqueness */}
-      <a href={project.url ? project.url : null} className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl min-w-[300px] p-4 hover:border-primary">
-        <div className="flex flex-col gap-5">
-          <img className="w-full rounded-[10px] object-cover max-h-[300px]" src={project.image} alt="Project" />
-          <div className="grid">
-            <h5 className="text-primary text-lg font-[600]">{project.name}</h5>
-            <div className="flex flex-col gap-1">
-              <p className="font-medium text-gray-600 text-sm">Developed By</p>
-              <div className="flex flex-wrap gap-2">
-                {project.TeamWork.map((users, index) => {
+                {data.map((project) => {
                   return (
-                    <div key={`${users.user._id}-${index}`}> {/* Unique key for team member */}
-                      <p className="break-words text-sm leading-3 max-w-full w-full">
-                        {users.user.name}
-                        {index < project.TeamWork.length - 1 && <span className="text-black">, </span>}
-                      </p>
-                    </div>
+                    <SwiperSlide key={`${project._id}-${project.name}`}>
+                      {" "}
+                      {/* Combine _id with name for uniqueness */}
+                      <a
+                        href={project.url ? project.url : null}
+                        className="swiper-slide group bg-[#242323]  border border-solid border-[#383838]  rounded-2xl min-w-[300px] p-4 hover:border-primary"
+                      >
+                        <div className="flex flex-col gap-5">
+                          <img
+                            className="w-full rounded-[10px] object-cover max-h-[300px]"
+                            src={project.image}
+                            alt="Project"
+                          />
+                          <div className="grid">
+                            <h5 className="text-primary text-lg font-[600]">
+                              {project.name}
+                            </h5>
+                            <div className="flex flex-col gap-1">
+                              <p className="font-medium text-text_color text-sm">
+                                Developed By
+                              </p>
+                              <div className="flex flex-wrap gap-2">
+                                {project.TeamWork.map((users, index) => {
+                                  return (
+                                    <div key={`${users.user?._id || index}`}>
+                                      <p className="break-words text-sm leading-3 max-w-full w-full text-sub_text">
+                                        {users?.user?.name || "Unknown"}
+                                        {index <
+                                          project.TeamWork.length - 1 && (
+                                          <span className="text-sub_text">
+                                            ,{" "}
+                                          </span>
+                                        )}
+                                      </p>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
                   );
                 })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </SwiperSlide>
-  );
-})}
-
-
               </Swiper>
             </div>
           </div>
           <Link
             to={"/Our-Projects"}
             dir="rtl"
-            className="mt-[17px] flex gap-1 items-center hover:text-primary "
+            className="mt-[17px] flex gap-1 text-sub_text items-center hover:text-primary "
           >
             {" "}
             <svg

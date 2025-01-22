@@ -52,7 +52,7 @@ const Allprojects = () => {
 
   
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col bg-background_color justify-between min-h-screen">
       <Helmet>
   {/* Basic Meta Tags */}
   <title>Our Projects - Genius Wings Company</title>
@@ -123,18 +123,18 @@ const Allprojects = () => {
                 Our Projects
               </h2>
               <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-                <p className="md:text-lg text-sm text-gray-700">
+                <p className="md:text-lg text-sm text-text_color">
                   Explore the innovative projects we've delivered, highlighting our dedication to quality and creativity
                 </p>
               </div>
             </div>
       
-            <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 lg:grid-cols-3 gap-6 mt-7 mb-8">
+            <div className="grid grid-cols-1  duration-[0.7s] sm:grid-cols-2 2xl:grid-cols-4 lg:grid-cols-3 gap-6 mt-7 mb-8">
               {Projects.map((project) => {
                 return (
                   <a key={project._id}
                     href={project.url ? project.url : null}
-                    className="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl w-full p-4 hover:border-primary"
+                    className="swiper-slide group  border border-[#2c2c2c]   bg-[#242424] rounded-2xl w-full p-4 hover:border-primary duration-[0.7s]"
                   >
                     <div className="flex flex-col gap-5">
                       <img
@@ -143,25 +143,22 @@ const Allprojects = () => {
                         alt="Ghaith Adnan"
                       />
                       <div className="grid">
-                        <h5 className="text-gray-900 max-w-full break-words text-lg font-[500]">{project.name}</h5>
+                        <h5 className=" max-w-full break-words text-lg text-primary font-[500]">{project.name}</h5>
       
                         <div className="flex flex-col  gap-1">
-                          <p className="font-medium text-gray-600 text-sm">Developer By</p>
+                          <p className="font-medium text-sub_text text-sm">Developer By</p>
                           <div className="flex flex-wrap gap-2 text-transparent bg-clip-text bg-primary">
-                            {project.TeamWork.map((users, index) => {
-                              return (
-                                <div key={index}>
-                                  <p className="break-words text-sm leading-3 max-w-full w-full">
-                                    {users.user.name}
-                                {" "}    
-                                    {index < project.TeamWork.length - 1 && (
-                                    <span className="text-black">, </span>
-                                  )}
-                                  </p>
-                              
-                                </div>
-                              );
-                            })}
+                          {project.TeamWork.map((users, index) => {
+  return (
+    <div key={`${users.user?._id || index}`}>
+      <p className="break-words text-sm leading-3 max-w-full w-full text-sub_text">
+        {users?.user?.name || "Unknown"}
+        {index < project.TeamWork.length - 1 && <span className="text-sub_text">, </span>}
+      </p>
+    </div>
+  );
+})}
+
                           </div>
                         </div>
                       </div>
@@ -172,25 +169,25 @@ const Allprojects = () => {
             </div>
             {
            total_data>12&&Projects.length>0?
-              <div className="flex justify-center mt-8">
-              <button
-                onClick={() => handlePageChange(pagination.currentPage - 1)}
-                disabled={pagination.currentPage === 1}
-                className="px-4 py-2 mx-2 border rounded-md disabled:opacity-50 bg-white hover:bg-primary hover:text-white"
-              >
-                Previous
-              </button>
-              <span className="flex items-center justify-center text-lg mx-2">
-                Page {pagination.currentPage} of {pagination.numberOfPages}
-              </span>
-              <button
-                onClick={() => handlePageChange(pagination.currentPage + 1)}
-                disabled={pagination.currentPage === pagination.numberOfPages}
-                className="px-4 py-2 mx-2 border rounded-md disabled:opacity-50 bg-white hover:bg-primary hover:text-white"
-              >
-                Next
-              </button>
-            </div>
+           <div className="flex justify-center mt-8">
+           <button
+             onClick={() => handlePageChange(pagination.currentPage - 1)}
+             disabled={pagination.currentPage === 1}
+             className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+           >
+             Previous
+           </button>
+           <span className="flex  text-text_color items-center justify-center text-lg mx-2">
+             Page {pagination.currentPage} of {pagination.numberOfPages}
+           </span>
+           <button
+             onClick={() => handlePageChange(pagination.currentPage + 1)}
+             disabled={pagination.currentPage === pagination.numberOfPages}
+             className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary text-text_color hover:text-white"
+           >
+             Next
+           </button>
+         </div>
               :null
             }
     

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cheak_auth } from "../../Redux/Actions/contact-us-action";
 import Loader from "../Loader";
 import Error404 from "../error404-page";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   // Separate useState for each form field
@@ -22,6 +23,7 @@ const SignupPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State to toggle confirm password visibility
   const isAuthuntucated = useSelector((state) => state.contact.auth_status);
   const dispatch = useDispatch()
+  const navigate=useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -46,8 +48,8 @@ const SignupPage = () => {
           },
         }
       );
-
       toast.success("Account created successfully!");
+      navigate('/login')
     } catch (error) {
       if (error.response) {
         const { status } = error.response;
@@ -93,9 +95,9 @@ const SignupPage = () => {
   }
   
   return (
-    <div className="min-h-screen pt-[140px] pb-[50px]  flex items-center justify-center p-4">
-      <div className="bg-white border p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+    <div className="min-h-screen bg-background_color pt-[140px] pb-[50px]  flex items-center justify-center p-4">
+      <div className=" border border-[#303030] p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center text-text_color mb-4">
           Sign Up
         </h2>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -106,7 +108,7 @@ const SignupPage = () => {
               id="floating_name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
             />
@@ -125,7 +127,7 @@ const SignupPage = () => {
               id="floating_email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
             />
@@ -144,7 +146,7 @@ const SignupPage = () => {
               id="floating_password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
             />
@@ -174,7 +176,7 @@ const SignupPage = () => {
               id="floating_repeat_password"
               value={passwordConfirm}
               onChange={(e) => setPasswordConfirm(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
             />
@@ -204,7 +206,7 @@ const SignupPage = () => {
               id="floating_phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
               required
             />
@@ -222,7 +224,7 @@ const SignupPage = () => {
               id="floating_role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block py-2.5 px-0 w-full text-sm text-text_color bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
             >
               <option value="User">User</option>
               <option value="Admin">Admin</option>

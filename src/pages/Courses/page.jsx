@@ -42,6 +42,14 @@ const PaginationComponent = () => {
       page={currentPage}
       onChange={handlePageChange}
       style={{ color: "#ffb923" }}
+        sx={{
+    '& .MuiPaginationItem-root': {
+      color: 'white',  // Set text color to white
+    },
+    '& .MuiPaginationItem-ellipsis': {
+      color: 'white',  // Set color of ellipsis to white (if present)
+    },
+  }}
     />
   );
 };

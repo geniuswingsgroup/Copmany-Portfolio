@@ -87,23 +87,23 @@ const RegisterCourse = () => {
     return <Error404 />;
   }
   return (
-    <div className="min-h-screen flex pt-[140px] items-center justify-center">
+    <div className="min-h-screen flex bg-background_color pt-[140px] items-center justify-center">
       <Toaster position="top-right" reverseOrder={false} />
       {loading ? (
         <Loader />
       ) : (
         <>
-          <div className="bg-white p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
+          <div className=" p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
             <div className="flex justify-between flex-wrap gap-4 items-center mb-6">
-              <h2 className="text-3xl font-semibold text-gray-800">
+              <h2 className="text-3xl font-semibold text-text_color">
                 Manage Registers
               </h2>
             </div>
 
             {/* Registers Table */}
             <div className="overflow-x-auto shadow-md rounded-lg">
-              <table className="min-w-full table-auto bg-white border-separate border-spacing-0">
-                <thead className="bg-gray-200">
+            <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+            <thead className="bg-[#302f2f] text-text_color">
                   <tr>
                     <th className="py-2 px-4 text-left"> Name</th>
                     <th className="py-2 px-4 text-left">Email</th>
@@ -116,7 +116,7 @@ const RegisterCourse = () => {
                   {register.map((register) => (
                     <tr
                       key={register._id}
-                      className="border-b hover:bg-gray-50"
+                      className="border-b  text-text_color"
                     >
                       <td className="py-2 px-4 max-w-[200px] break-words">
                         {register.name}
@@ -157,7 +157,7 @@ const RegisterCourse = () => {
   >
     Previous
   </button>
-  <span className="mx-4">{currentPage}</span>
+  <span className="mx-4 text-text_color">{currentPage}</span>
   <button
     disabled={currentPage === totalPages}
     onClick={() =>

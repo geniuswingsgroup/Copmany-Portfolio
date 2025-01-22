@@ -79,7 +79,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col bg-[#1e1e1e] justify-between">
       
       {loading ? (
         <Loader />

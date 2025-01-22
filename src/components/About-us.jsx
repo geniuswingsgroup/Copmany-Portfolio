@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/images/about-us.jpg";
-import second_image from "../assets/images/About-us-image.jpg";
+import second_image from "../assets/images/Premium Vector _ Yellow cyber circuit future technology concept background.jpg";
 
 const About_us = () => {
   return (
-    <section className="w-full flex justify-center p-4 mx-auto py-10 bg-gray-50">
+    <section className="w-full flex justify-center mt-[-50px] p-4 mx-auto  bg-[#1e1e1e]">
       {/* Title */}
       <div className="2xl:max-w-[1600px] md:max-w-[1270px]">
         {/* <div className="mx-auto w-full mb-[100px] text-center">
@@ -20,40 +20,41 @@ const About_us = () => {
           </div>
         </div> */}
         <section className="py-24 relative xl:mr-0 lg:mr-5 mr-0">
+          
           <div className="w-full mx-auto">
             <div className="w-full justify-center items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
               <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
                 <div className="w-full flex-col justify-center items-start gap-8 flex">
                   <div className="flex-col justify-start lg:items-start items- gap-4 flex">
-                    <h6 className="text-gray-400  mb-[-20px] text-base font-normal leading-relaxed">About Us</h6>
+                    <h6 className="text-text_color  mb-[-20px] text-base font-normal leading-relaxed">About Us</h6>
                     <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                       <h2 className="md:text-4xl text-2xl font-[500] text-transparent bg-clip-text bg-primary md:leading-[3.25rem] mb-8">
                         Delivering innovative solutions with integrity and expertise.
                       </h2>
-                      <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start">
+                      <p className="text-sub_text text-base font-normal leading-relaxed lg:text-start">
                         Focused on delivering high-quality solutions, we are committed to excellence and building lasting relationships with our clients.
                       </p>
                     </div>
                   </div>
                   <div className="w-full flex-col justify-center items-start gap-6 flex">
                     <div className="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
-                      <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                        <h4 className="text-gray-900 text-xl font-[500] font-manrope leading-9">Experience</h4>
-                        <p className="text-gray-500 text-sm font-normal leading-relaxed">Influencing Digital Landscapes Together</p>
+                      <div className="w-full h-full p-3.5 rounded-xl border border-[#333232FF]  transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 className="text-text_color text-xl font-[500] font-manrope leading-9">Experience</h4>
+                        <p className="text-sub_text text-sm font-normal leading-relaxed">Influencing Digital Landscapes Together</p>
                       </div>
-                      <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                        <h4 className="text-gray-900 text-xl font-[500] font-manrope leading-9">Projects</h4>
-                        <p className="text-gray-500 text-sm font-normal leading-relaxed">Delivering Excellence in Software Solutions</p>
+                      <div className="w-full h-full p-3.5 rounded-xl border border-[#333232FF]  transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 className="text-text_color text-xl font-[500] font-manrope leading-9">Projects</h4>
+                        <p className="text-sub_text text-sm font-normal leading-relaxed">Delivering Excellence in Software Solutions</p>
                       </div>
                     </div>
                     <div className="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
-                      <div className="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                        <h4 className="text-gray-900 text-xl font-[500] font-manrope leading-9">Achievements</h4>
-                        <p className="text-gray-500 text-sm font-normal leading-relaxed">Advancing Technology with Dedication</p>
+                      <div className="w-full p-3.5 rounded-xl border border-[#333232FF]  transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 className="text-text_color text-xl font-[500] font-manrope leading-9">Achievements</h4>
+                        <p className="text-sub_text text-sm font-normal leading-relaxed">Advancing Technology with Dedication</p>
                       </div>
-                      <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                        <h4 className="text-gray-900 text-xl font-[500] font-manrope leading-9">99% Happy Clients</h4>
-                        <p className="text-gray-500 text-sm font-normal leading-relaxed">Mirrors our Focus on Client Satisfaction.</p>
+                      <div className="w-full h-full p-3.5 rounded-xl border border-[#333232FF]  transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 className="text-text_color text-xl font-[500] font-manrope leading-9">99% Happy Clients</h4>
+                        <p className="text-sub_text text-sm font-normal leading-relaxed">Mirrors our Focus on Client Satisfaction.</p>
                       </div>
                     </div>
                   </div>
@@ -62,7 +63,7 @@ const About_us = () => {
                   to={'/About-Us'}
                   className="sm:w-fit w-full group px-3.5 py-2  hover:bg-hover active:bg-active bg-primary rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex"
                 >
-                  <span className="px-1.5 text-white text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">
+                  <span className="px-1.5 text-text_color text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">
                     Read More
                   </span>
                   <svg
@@ -84,7 +85,7 @@ const About_us = () => {
                 </Link>
               </div>
               <div className="w-full lg:justify-start justify-center items-start flex">
-                <div className="w-full lg:h-[646px] h-full md:bg-white rounded-3xl lg:border border-gray-200 relative">
+                <div className="w-full lg:h-[646px] h-full md:bg-[#242323] rounded-3xl lg:border border-[#333232FF] relative">
                   <img
                     className="lg:mt-5 lg:ml-5 w-full h-full rounded-3xl object-cover"
                     src={second_image}

@@ -6,17 +6,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'Navbar-responsive': '1085px', // Custom breakpoint at 1085px
+      },
       colors: {
-        primary: '#2563eb', // Primary color (Blue)
-        secondary: '#7c3aed', // Secondary color (Violet)
+        primary: '#E4C24A', // Primary color (Blue)
+        hover: '#B1911E', // Secondary color (Violet)
+        text_color:'#FFFFFF',
+        sub_text:'#B0B0B0',
+        background_color:'#1e1e1e',
+
+
       },
       backgroundImage: {
-        'primary': 'linear-gradient(to top left, #2563eb, #7c3aed)', // Your primary gradient
-        'hover': 'linear-gradient(to top left, #4c83e7, #9a6ae5)', // Lighter gradient for hover
-        'active': 'linear-gradient(to top left, #1d45a1, #6a38b1)', // Darker gradient for active
+        'primary': 'linear-gradient(to right, #C89B3C, #E4C24A, #B1911E)', // Base gradient
+        'hover': 'linear-gradient(to right, #CFAA59, #DFC543, #A8891C)', // Hover gradient
+        'active': 'linear-gradient(to right, #B98632, #D3B039, #9F7F1A)', // Active gradient
+      },
       },
     },
-  },
+  
   plugins: [
     require('flowbite/plugin')
   ]

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import web from "../assets/images/web development.jpg"; // imported image
-import Mobile from "../assets/images/275d2f2edeab40d1b332c78c4b818819.jpg"; // imported image
+import web from "../assets/images/Web development photo.webp"; // imported image
+import Mobile from "../assets/images/c++.webp"; // imported image
 import { Link } from "react-router-dom";
 
 const Our_features = ({ data }) => {
@@ -26,7 +26,7 @@ const Our_features = ({ data }) => {
 
   return (
     <>
-      <div className="flex justify-center w-full p-4 py-16 md:py-16 bg-gray-50 to-blue-100">
+      <div className="flex justify-center w-full p-4 pt-[110px]  bg-[#1e1e1e]">
         <div className="2xl:max-w-[1600px] md:max-w-[1250px]">
           {/* Section */}
           <section className="relative">
@@ -36,7 +36,7 @@ const Our_features = ({ data }) => {
                   {/* Display imported images */}
                   <div className="pt-24 hidden sm:flex lg:justify-center sm:justify-end justify-start items-start gap-2.5 ">
                     <img
-                      className="sm:ml-0 ml-auto h-[350px] w-[100%] md:w-[400px] lg:w-[500px] rounded-xl object-cover"
+                      className="sm:ml-0 ml-auto  h-[350px] w-[100%] md:w-[400px] lg:w-[500px] rounded-xl object-cover"
                       src={web} // Using the imported web image
                       alt="Web Development"
                     />
@@ -53,22 +53,22 @@ const Our_features = ({ data }) => {
                     <h2 className="font-display bg-clip-text text-[30px] lg:text-4xl  font-[600] text-primary">
                     Key Features of Our Services
                       </h2>
-                      <p className="text-gray-500 text-base font-normal sm:text-center leading-relaxed lg:text-start ">
+                      <p className="text-text_color text-base font-normal sm:text-center leading-relaxed lg:text-start ">
                         We provide a comprehensive range of services, including custom web development, innovative app solutions, expert business development, professional Photoshop design, and stunning web design. Our goal is to help your business grow, stand out, and succeed in the digital world.
                       </p>
                     </div>
                     <div className="w-full lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <h3 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">5+</h3>
-                        <h6 className="text-gray-500 text-base font-normal leading-relaxed">Years of Experience</h6>
+                        <h3 className="text-text_color text-4xl font-bold font-manrope leading-normal">5+</h3>
+                        <h6 className="text-sub_text text-base font-normal leading-relaxed">Years of Experience</h6>
                       </div>
                       <div className="flex-col justify-start items-start inline-flex">
-                        <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">10+</h4>
-                        <h6 className="text-gray-500 text-base font-normal leading-relaxed">Successful Projects</h6>
+                        <h4 className="text-text_color text-4xl font-bold font-manrope leading-normal">10+</h4>
+                        <h6 className="text-sub_text text-base font-normal leading-relaxed">Successful Projects</h6>
                       </div>
                       <div className="flex-col justify-start items-start inline-flex">
-                        <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">9+</h4>
-                        <h6 className="text-gray-500 text-base font-normal leading-relaxed">Happy Clients</h6>
+                        <h4 className="text-text_color text-4xl font-bold font-manrope leading-normal">9+</h4>
+                        <h6 className="text-sub_text text-base font-normal leading-relaxed">Happy Clients</h6>
                       </div>
                     </div>
                   </div>

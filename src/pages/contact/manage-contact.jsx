@@ -70,17 +70,17 @@ const dispatch = useDispatch()
     return <Error404 />;
   }
   return (
-    <div className="container pt-[140px] mx-auto p-4">
+    <div className="container bg-background_color pt-[140px] h-screen min-w-full mx-auto p-4">
     <Toaster position="top-right" reverseOrder={false} />
-    <div className="bg-white shadow-md border border-spacing-4 rounded-lg p-6">
+    <div className=" srounded-lg p-6">
       <h1 className="text-2xl font-semibold mb-4">Contact Us</h1>
   
       {loading ? (
         <Loader />
       ) : (
         <div className="overflow-x-auto">
-          <table className="table-auto w-full text-sm text-left text-gray-500">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+            <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+            <thead className="bg-[#302f2f] text-text_color">
               <tr>
                 <th scope="col" className="px-6 py-3">Name</th>
                 <th scope="col" className="px-6 py-3">Email</th>
@@ -91,7 +91,7 @@ const dispatch = useDispatch()
             <tbody>
               {contacts && contacts.length > 0 ? (
                 contacts.map((contact) => (
-                  <tr key={contact._id} className="bg-white border-b hover:bg-gray-50">
+                  <tr key={contact._id} className="border-b text-text_color ">
                     <td className="px-6 py-4">{contact.name}</td>
                     <td className="px-6 py-4">{contact.email}</td>
                     <td className="px-6 py-4">{contact.message}</td>

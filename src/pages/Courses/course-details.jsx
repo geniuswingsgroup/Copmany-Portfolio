@@ -112,7 +112,7 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col bg-background_color justify-between min-h-screen">
 <Helmet>
   {/* Basic Meta Tags */}
   <title>{courseDetails ? `${courseDetails.name} - Genius Wings Company` : "Course Details - Genius Wings Company"}</title>
@@ -206,13 +206,13 @@ const CourseDetails = () => {
   
             {/* Product Details */}
             <div className="w-full md:w-1/2 px-4">
-              <h2 className="text-3xl max-w-full break-words font-bold mb-2">{courseDetails ? courseDetails.name : ""}
+              <h2 className="text-3xl max-w-full text-text_color break-words font-bold mb-2">{courseDetails ? courseDetails.name : ""}
               </h2>
               <div className="mb-4">
                   <div className="flex gap-4 items-center">
-                    <span className="text-primary font-bold">
+                    {/* <span className="text-primary font-bold">
                       {courseDetails ? courseDetails.price : ""}
-                    </span>
+                    </span> */}
                     <div
                       className={
                         courseDetails?.Available
@@ -225,19 +225,19 @@ const CourseDetails = () => {
                   </div>
                 </div>
              
-              <p className="text-gray-700  max-w-full break-words mb-6">
+              <p className="text-sub_text  max-w-full break-words mb-6">
               {courseDetails ? courseDetails.description : ""}
               </p>
   
               <div className="flex gap-1 items-center">
-                <h3 className="text-lg font-semibold ">Lecturer :</h3>
-                <div className="flex space-x-2">
+                <h3 className="text-lg text-text_color font-semibold ">Lecturer :</h3>
+                <div className="flex space-x-2 text-sub_text ">
                 {courseDetails.user.name?courseDetails.user.name:null}
                 </div>
               </div>
-              <div className="flex gap-1 items-center mb-4">
+              <div className="flex gap-1 items-center text-text_color  mb-4">
                 <h3 className="text-lg font-semibold ">Start Date :</h3>
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-sub_text ">
                 {courseDetails?courseDetails.TimeStart:null}
                 </div>
               </div>
@@ -297,13 +297,13 @@ const CourseDetails = () => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        className="bg-white px-6 py-4 w-[90%] max-w-lg rounded-md shadow-lg"
+        className="bg-[#1e1e1e] p-6 w-[90%] border border-[#303030] max-w-lg rounded-md shadow-lg"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
       >
-        <h2 className="text-2xl font-bold mb-4">Register for the Course</h2>
+        <h2 className="text-2xl text-text_color font-bold mb-4">Register for the Course</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="name" className="block font-medium text-gray-700">
+            <label htmlFor="name" className="block font-medium text-text_color">
               Name
             </label>
             <input
@@ -312,12 +312,12 @@ const CourseDetails = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 mt-1"
+              className="w-full border border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0 rounded-md px-3 py-2 mt-1"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block font-medium text-gray-700">
+            <label htmlFor="email" className="block font-medium text-text_color">
               Email
             </label>
             <input
@@ -326,12 +326,12 @@ const CourseDetails = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 mt-1"
+              className="w-full border border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0 rounded-md px-3 py-2 mt-1"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="phone" className="block font-medium text-gray-700">
+            <label htmlFor="phone" className="block font-medium text-text_color">
               Phone
             </label>
             <input
@@ -340,13 +340,13 @@ const CourseDetails = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 mt-1"
+              className="w-full border border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0 rounded-md px-3 py-2 mt-1"
               required
             />
           </div>
           <button
             type="submit"
-            className="bg-primary text-white w-full py-2 rounded-md font-medium"
+            className="bg-primary hover:bg-hover active:bg-active text-white w-full py-2 rounded-md font-medium"
           >
             {isLoading ? "Processing..." : "Register"}
           </button>

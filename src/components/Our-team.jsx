@@ -36,16 +36,16 @@ const Our_team = ({ data }) => {
   }, [data]);
 
   return (
-    <section id="team" className="p-4 flex items-center justify-center">
+    <section id="team" className="p-4 flex mt-[20px] items-center bg-[#1e1e1e] justify-center">
       <div className="mx-auto 2xl:max-w-[1800px] md:max-w-[1270px] sm:px-6 lg:px-8">
-        <section className="py-[50px]">
+        <section className="">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto w-full mb-[100px] text-center">
               <h2 className="font-display text-[30px] lg:text-5xl md:text-5xl font-[600] text-transparent bg-clip-text bg-primary">
                 Meet Our Team
               </h2>
               <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-                <p className="md:text-lg text-sm text-gray-700">
+                <p className="md:text-lg text-sm text-sub_text">
                   Bringing innovation and expertise together to achieve
                   remarkable results
                 </p>
@@ -66,31 +66,37 @@ const Our_team = ({ data }) => {
                         <img
                           src={data.image} // Use appropriate dynamic image path if needed
                           alt={data.name}
-                          className="w-40 h-40 p-1 rounded-full mx-auto transition-all duration-500 object-contain border border-gray-100 border-solid border-transparent group-hover:border-primary"
+                          className="w-40 h-40 p-1 rounded-full mx-auto transition-all duration-500 object-contain border  border-[#313131] border-solid  group-hover:border-primary"
                         />
                       </div>
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-transparent bg-clip-text group-hover:bg-primary">
+                 <div className="flex flex-col items-center">
+                 <h4 className="text-xl font-semibold text-text_color mb-2 capitalize text-center transition-all duration-500 group-hover:text-transparent bg-clip-text group-hover:bg-primary">
                         {data.name}
                       </h4>
                       <div className="flex flex-col items-center gap-3">
-                        <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
+                        <span className="text-sub_text text-center block transition-all duration-500 group-hover:text-text_color">
                           {data.job_title}
                         </span>
-                        <div className="flex gap-1 items-center text-transparent bg-clip-text bg-primary">
-                          <p className="text-sm">Show Profile</p>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </div>
+                         <div
+                                   dir="rtl"
+                                   className="mt-[5px] flex gap-1  items-center text-primary "
+                                 >
+                                   {" "}
+                                   <svg
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20"
+                                     fill="currentColor"
+                                     className="w-5 h-5"
+                                   >
+                                     <path
+                                       fillRule="evenodd"
+                                       d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                       clipRule="evenodd"
+                                     />
+                                   </svg>
+                                   <p>Show Profile</p>
+                                 </div>
+                 </div>
                       </div>
                     </Link>
                   ))

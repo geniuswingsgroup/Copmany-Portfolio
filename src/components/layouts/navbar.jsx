@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import brand from "../../assets//images/brand.png";
+import brand from "../../assets//images/Global-1-.png";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -36,29 +36,30 @@ const Navbar = () => {
   }, []);
 
   const Brand = () => (
-    <div className="flex items-center justify-between py-2 lg:block">
+    <div className="flex items-center justify-between py-2 Navbar-responsive:block">
       {/* <p  dir="rtl" className="mb-[-22px] text-[10px]">group</p> */}
 
-      <Link to={"/"} className="flex items-center gap-2 text-primary ">
+      <Link to={"/"} className="flex lg:justify-start justify-center items-center gap-2 text-[#b29336]">
         <img
           src={brand}
-          className="md:h-[52px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
+          className="md:h-[57px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
           alt="Message Shield"
         />
-        <h2 className="md:text-[23px] text-[17px] mt-1  font-[500] text-gray-800 leading-[3.25rem]">
+        <h2 className="md:text-[25px] text-[17px] md:mt-2  font-[500] text-text_color leading-[3.25rem]">
           Genius
           <span className="text-transparent bg-clip-text bg-primary">
             Wings
           </span>
         </h2>
+        <p className="text-text_color mt-[-28x] ml-[-50px]">group</p>
+
       </Link>
-     
       {
         isAuthenticated==200?
-        <div className="lg:hidden flex">
+        <div className="Navbar-responsive:hidden flex">
         <TemporaryDrawer/>
 
-        </div>        : <div className="lg:hidden">
+        </div>        : <div className="Navbar-responsive:hidden">
         <div>
           {["top"].map((anchor, idx) => (
             <div key={idx}>
@@ -133,19 +134,19 @@ const Navbar = () => {
 
   const list = (anchor) => (
     <Box
-      className=" h-screen p-[16px] pt-[20px] "
+      className=" h-screen bg-[#1E1E1E] p-[16px] pt-[20px] "
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-     <Link to={"/"} className="flex items-center gap-2 text-primary mt-[-16px]">
+   <Link to={"/"} className="flex lg:justify-start justify-center items-center gap-2 text-[#b29336]">
         <img
           src={brand}
-          className="md:h-[57px] sm:mt-[-16px]  mt-[-9px] h-[40px]"
+          className="md:h-[57px] sm:mt-[-16px]  mt-[-13px] h-[40px]"
           alt="Message Shield"
         />
-        <h2 className="md:text-[22px] text-[17px] mt-2  font-[500] text-gray-800 leading-[3.25rem]">
+        <h2 className="md:text-[25px] text-[17px] mt-2  font-[500] text-text_color leading-[3.25rem]">
           Genius
           <span className="text-transparent bg-clip-text bg-primary">
             Wings
@@ -162,7 +163,7 @@ const Navbar = () => {
             {/* Add key={item.path} */}
             <a
               href={item.path}
-              className="flex border-b pb-[20px] border-gray-200 justify-center hover:text-ptimary transition-all duration-700"
+              className="flex border-b text-text_color pb-[20px] border-[#302f2f] justify-center hover:text-ptimary transition-all duration-700"
             >
               {item.title}
             </a>
@@ -213,12 +214,39 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled down 50 pixels
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
       style={{
         fontFamily: "Poppins, sans-serif",
       }}
-      className="fixed w-full z-50 shadow-sm bg-white lg:py-[5px] "
+      className=
+      {
+        isScrolled?
+  "fixed w-full z-50 shadow-  backdrop-blur-lg  md:py-[8px] pt-[8px] "
+  :
+  "fixed w-full z-50 shadow-sm  md:py-[8px]  pt-[8px]"        
+      }
+      
+    
     >
       <nav
         className={`md:text-sm transition-all duration-300 ease-in-out  ${
@@ -227,25 +255,25 @@ const Navbar = () => {
             : "md:bg-transparent  "
         }`}
       >
-        <div className="gap-x-14 max-w-[1900px] mx-auto  items-center  px-4 lg:flex justify-between w-full lg:px-8">
+        <div className="gap-x-14 max-w-[1900px] mx-auto  items-center  px-4 Navbar-responsive:flex justify-between w-full Navbar-responsive:px-8">
           <Brand />
 
         {
           isAuthenticated==200?
-          <div className="lg:flex hidden">
+          <div className="Navbar-responsive:flex hidden">
           <TemporaryDrawer/>
 
           </div>
 
           :
           <div
-          className={`flex-1 w-full items-center mt-8 md:mt-0 lg:flex ${
+          className={`flex-1 w-full items-center mt-8 md:mt-0 Navbar-responsive:flex ${
             state ? "block" : "hidden"
           } `}
         >
-          <ul className="flex-1 justify-end w-full items-center space-y-6 lg:flex lg:space-x-6 lg:space-y-0">
+          <ul className="flex-1 justify-end w-full items-center space-y-6 Navbar-responsive:flex Navbar-responsive:space-x-6 Navbar-responsive:space-y-0">
             {navigation.map((item, idx) => (
-              <li key={idx} className=" text-gray-800 text-[16px]  ">
+              <li key={idx} className=" text-text_color text-[16px]  ">
                 <Link
                   to={item.path}
                   className="block hover:text-primary transition-all duration-700"

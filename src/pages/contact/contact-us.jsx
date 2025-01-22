@@ -27,7 +27,7 @@ const Contact_us = () => {
   };
 
   return (
-    <div className="flex flex-col pt-[120px] justify-between min-h-screen">
+    <div className="flex flex-col  bg-background_color pt-[120px] justify-between min-h-screen">
       <Helmet>
   {/* Basic Meta Tags */}
   <title>Contact Us - Genius Wings Company</title>
@@ -88,7 +88,7 @@ const Contact_us = () => {
 </Helmet>
 
     <Toaster position="top-right" reverseOrder={false} />
-    <div className="container my-12 mx-auto px-2 md:px-4">
+    <div className="container my-12 mx-auto px-4 md:px-4">
       <section className="mb-32">
         <div className="flex flex-wrap">
           <form
@@ -101,7 +101,7 @@ const Contact_us = () => {
               </label>
               <input
                 type="text"
-                className="px-2 py-2 border w-full outline-none rounded-md"
+                className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
                 id="name"
                 placeholder="Name"
                 value={name}
@@ -115,7 +115,7 @@ const Contact_us = () => {
               </label>
               <input
                 type="email"
-                className="px-2 py-2 border w-full outline-none rounded-md"
+                className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
                 id="email"
                 placeholder="Enter your email address"
                 value={email}
@@ -129,8 +129,8 @@ const Contact_us = () => {
                 Message
               </label>
               <textarea
-                className="px-2 py-2 border rounded-[5px] w-full outline-none"
-                required
+                        className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                        required
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -139,7 +139,7 @@ const Contact_us = () => {
 
             <button
               type="submit"
-              className="mb-6 inline-block w-full rounded bg-primary px-6 py-2.5 font-medium uppercase leading-normal text-white hover:shadow-md hover:bg-primary"
+              className="mb-6 inline-block w-full rounded bg-primary px-6 py-2.5 font-medium uppercase leading-normal text-white hover:shadow-md hover:bg-hover active:text-active"
             >
               Send
             </button>
@@ -191,7 +191,7 @@ const Contact_us = () => {
               />
               <ContactCard
                 title="Address"
-                email="Kirkuk, Iraq"
+                email="Kasernen str. 12 , 21073 Hamburg/ Germany"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -55,7 +55,7 @@ const BrandCarousel = () => {
           left: 0,
           width: "10%",
           height: "100%",
-          background: "linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0))",
+          background: "linear-gradient(to right, #1E1E1E, rgba(100,100,100,0))",
           zIndex: 10,
         }}
       ></div>
@@ -66,9 +66,9 @@ const BrandCarousel = () => {
           position: "absolute",
           top: 0,
           right: 0,
-          width: "10%",
+          width: "15%",
           height: "100%",
-          background: "linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))",
+          background: "linear-gradient(to left, #1E1E1E, rgba(100,100,100,0))",
           zIndex: 10,
         }}
       ></div>
@@ -93,7 +93,7 @@ const BrandCarousel = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              background: "#ffffff",
+              background: "",
               borderRadius: "12px",
               overflow: "hidden",
             }}

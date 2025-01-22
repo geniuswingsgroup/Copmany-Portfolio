@@ -185,15 +185,15 @@ const ManageFeatures = () => {
     return <Error404 />;
   }
   return (
-    <div className="min-h-screen flex pt-[140px] items-center justify-center">
+    <div className="min-h-screen bg-background_color flex pt-[140px] items-center justify-center">
       <Toaster position="top-right" reverseOrder={false} />
 
       {loading ? (
         <Loader />
       ) : (
-        <div className="bg-white p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
+        <div className=" p-3 rounded-lg w-full 2xl:max-w-[1800px] md:max-w-[1270px]">
           <div className="flex justify-between flex-wrap gap-4 items-center mb-6">
-            <h2 className="text-3xl font-semibold text-gray-800">
+            <h2 className="text-3xl font-semibold text-text_color">
               Manage Features
             </h2>
             <button
@@ -209,12 +209,9 @@ const ManageFeatures = () => {
           </div>
 
           {/* Features Table */}
-          {loading ? (
-            <div className="text-center text-gray-500">Loading...</div>
-          ) : (
-            <div className="overflow-x-auto shadow-md rounded-lg">
-              <table className="min-w-full table-auto bg-white border-separate border-spacing-0">
-                <thead className="bg-gray-200">
+          <div className="overflow-x-auto shadow-md rounded-lg">
+            <table className="min-w-full table-auto border border-[#302f2f] border-separate border-spacing-0">
+            <thead className="bg-[#302f2f] text-text_color">
                   <tr>
                     <th className="py-2 px-4 text-left">Feature Icon</th>
                     <th className="py-2 px-4 text-left">Title</th>
@@ -224,7 +221,7 @@ const ManageFeatures = () => {
                 </thead>
                 <tbody>
                   {features.map((feature) => (
-                    <tr key={feature._id} className="border-b hover:bg-gray-50">
+                    <tr key={feature._id} className="border-b text-text_color">
                       <td className="py-2 px-4 max-w-[200px] break-words">
                         <img
                           src={feature.image}
@@ -257,23 +254,21 @@ const ManageFeatures = () => {
                 </tbody>
               </table>
             </div>
-          )}
-
           {/* Pagination */}
           <div className="flex justify-center mt-4">
             <button
               disabled={currentPage === 1}
               onClick={() => handlePageChange(currentPage - 1)}
-              className="px-4 py-2 bg-gray-300 rounded-l-lg hover:bg-gray-400"
-            >
+              className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+              >
               Prev
             </button>
             <button className="px-4 py-2 bg-gray-300">{currentPage}</button>
             <button
               disabled={currentPage === totalPages}
               onClick={() => handlePageChange(currentPage + 1)}
-              className="px-4 py-2 bg-gray-300 rounded-r-lg hover:bg-gray-400"
-            >
+              className="px-4 py-2 mx-2  rounded-md disabled:opacity-50 bg-primary  text-text_color  hover:text-white"
+              >
               Next
             </button>
           </div>
@@ -281,30 +276,30 @@ const ManageFeatures = () => {
           {/* Modal for updating/adding feature */}
           {showModal && (
             <div className="fixed inset-0 pt-[120px] bg-black bg-opacity-50 flex justify-center items-center">
-              <div className="bg-white p-6 rounded-lg w-96">
-                <h3 className="text-xl font-semibold mb-4">
+              <div className="bg-background_color mx-2 p-6 rounded-lg shadow-lg w-[500px]">
+              <h3 className="text-xl font-semibold mb-4">
                   {currentFeature ? "Update Feature" : "Add New Feature"}
                 </h3>
                 <form onSubmit={handleSubmit}>
                   <div className="mb-2">
                     <label
                       htmlFor="nameIcon"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
-                      Feature Icon
+                      Feature Image
                     </label>
                     <input
                       type="file"
                       id=""
                       // value={image}
                       onChange={(e) => setImage(e.target.files[0])}
-                      className="w-full mt-1 px-3 py-2 border rounded-md"
-                    />
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
+                      />
                   </div>
                   <div className="mb-2">
                     <label
                       htmlFor="title"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Title
                     </label>
@@ -313,14 +308,14 @@ const ManageFeatures = () => {
                       id="title"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
-                      className="w-full mt-1 px-3 py-2 border rounded-md"
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
                       required
                     />
                   </div>
                   <div className="mb-2">
                     <label
                       htmlFor="description"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-text_color"
                     >
                       Description
                     </label>
@@ -328,7 +323,7 @@ const ManageFeatures = () => {
                       id="description"
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
-                      className="w-full mt-1 px-3 py-2 border rounded-md"
+                      className="w-full  border-[#303030] bg-[#252525] text-text_color focus:border-[#303030] focus:ring-0  p-2 border  rounded-md"
                       required
                     />
                   </div>
