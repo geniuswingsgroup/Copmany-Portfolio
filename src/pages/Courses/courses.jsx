@@ -15,6 +15,7 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import PaginationComponent from "./page";
 import { Helmet } from "react-helmet-async";
+import Search_loader from "../../components/search-loading";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -24,6 +25,8 @@ const minDistance = 10;
 const AllCourses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [SearchLoading, setSearchLoading] = useState(false);
+
   const [error, setError] = useState(null);
 
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -50,9 +53,9 @@ const AllCourses = () => {
   }, [dispatch]);
 
   const searchSubmit = async () => {
-    setLoading(true);
+    setSearchLoading(true);
     await dispatch(course_search(searchKeyword,gteFilter, lteFilter));
-    setLoading(false);
+    setSearchLoading(false);
     dispatch(keyword_value(searchKeyword));
 
     // Set loading to false after dispatch
@@ -72,6 +75,10 @@ const AllCourses = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  if(SearchLoading){
+    return <Search_loader/>
+  }
   return (
     <div>
       <Helmet>
@@ -198,10 +205,9 @@ const AllCourses = () => {
               </div>
             </div>
 
-            <div className="flex w-full md:absolute justify-center z-10   w-ful ">
+            {/* <div className="flex w-full md:absolute justify-center z-10   w-ful ">
               {isDropdownOpen && (
                 <div className=" freelance-filter mx-[16px]  border border-[#2c2c2c]   bg-[#242424] w-[600px]  max-h-[160px] overflow-hidden  md:mt-[-50px] mt-[14px]   rounded-xl ">
-                  {/* Add your dropdown content here */}
                   <div className=" flex text-text_color  flex-end">
                     <div className="flex w-full flex-col  mx-[20px]">
                       {" "}
@@ -247,7 +253,7 @@ const AllCourses = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
 
             <div
               onClick={() => {
@@ -294,7 +300,7 @@ const AllCourses = () => {
           );
         })}
       </div>
-      <p className="text-center my-[50px]">
+      <p className="text-center text-text_color my-[50px]">
         {courses.length <= 0
           ? "We're sorry, but it seems there is no data available at the moment. Please check back later or contact us if you believe this is an error."
           : null}

@@ -37,7 +37,7 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center text-text_color justify-center gap-2 lg:justify-start">
                   <LocalPhoneOutlinedIcon style={{ color: "#E4C24A" }} />
-                  +964 07730279390
+                  +49 176 60369006  <br />  +964 07730279390
 
                 </li>
                 <li className="flex items-center text-text_color  justify-center gap-2 lg:justify-start">
@@ -72,7 +72,7 @@ const Footer = () => {
       </footer>
       <div className="py-7 border-t flex bg-primary justify-center border-[#3b3b3b]">
         <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-          <span className="text-sm text-white">©<a href="https://pagedone.io/">GeniusWing Group</a> 2024, All rights reserved.</span>
+          <span className="text-sm text-white">©<Link to="/">GeniusWings Group</Link> 2024, All rights reserved.</span>
         </div>
       </div>
     </div>

@@ -150,7 +150,7 @@ const Contact_us = () => {
               <ContactCard
                 title="Technical support"
                 email="info@genius-wings.com"
-                phone=" +964 7774583999"
+                phone=" +49 176 60369006 ,   +964 7774583999"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ const Contact_us = () => {
               <ContactCard
                 title="Sales questions"
                 email="Sales@genius-wings.com"
-                phone="+964 07730279390"
+                phone=" +964 7774583999 , +964 07730279390"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

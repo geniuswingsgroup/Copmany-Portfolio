@@ -49,11 +49,14 @@ const Navbar = () => {
           Genius
           <span className="text-transparent bg-clip-text bg-primary">
             Wings
+            
           </span>
+          
         </h2>
-        <p className="text-text_color mt-[-28x] ml-[-50px]">group</p>
+        {/* <p className="text-text_color text-[12px] relative mt-[-30px] ml-[-48px]">group</p> */}
 
       </Link>
+      
       {
         isAuthenticated==200?
         <div className="Navbar-responsive:hidden flex">
@@ -88,7 +91,7 @@ const Navbar = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
-                    stroke="#2563eb"
+                    stroke="#E4C24A"
                     className="w-6 h-6"
                   >
                     <path
