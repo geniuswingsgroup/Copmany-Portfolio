@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import AddIcCallOutlinedIcon from "@mui/icons-material/AddIcCallOutlined";
-import image from "../assets/images/laptop-maintenance-3d-icon-download-in-png-blend-fbx-gltf-file-formats--service-repair-system-setting-settings-computer-pack-science-technology-icons-7588366.webp";
+import image from "../assets/images/laptop.png"
 import BrandCarousel from "./brands";
 
 export default () => {
