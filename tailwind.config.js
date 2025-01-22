@@ -18,7 +18,6 @@ module.exports = {
 
 
       },
-      
       backgroundImage: {
         'primary': 'linear-gradient(to right, #C89B3C, #E4C24A, #B1911E)', // Base gradient
         'hover': 'linear-gradient(to right, #CFAA59, #DFC543, #A8891C)', // Hover gradient

@@ -138,7 +138,7 @@ const Allprojects = () => {
                   >
                     <div className="flex flex-col gap-5">
                       <img
-                            className=" w-full rounded-[10px] object-cover max-h-[200px]"
+                            className=" w-full rounded-[10px] object-fill max-h-[200px]"
                             src={project.image}
                         alt="Ghaith Adnan"
                       />
@@ -146,7 +146,7 @@ const Allprojects = () => {
                         <h5 className=" max-w-full break-words text-lg text-primary font-[500]">{project.name}</h5>
       
                         <div className="flex flex-col  gap-1">
-                          <p className="font-medium text-sub_text text-sm">Developer By</p>
+                          <p className="font-medium text-sub_text text-sm">Developed By</p>
                           <div className="flex flex-wrap gap-2 text-transparent bg-clip-text bg-primary">
                           {project.TeamWork.map((users, index) => {
   return (
